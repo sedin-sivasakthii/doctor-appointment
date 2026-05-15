@@ -1,10 +1,13 @@
 import { Component, EventEmitter,
   Output ,Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import  { DoctorFilters } from '.././../../../core/models/filter.model';
 @Component({
   selector: 'app-filters',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './filters.html',
   styleUrl: './filters.css',
 })
@@ -19,7 +22,7 @@ export class Filters {
   };
   @Input() specialities: string[] = [];
   @Input() locations: string[] = [];
-  onFilterChange(): void {
+  onFiltersChange(): void {
     this.filtersChanged.emit(this.filters);
   }
   resetFilters(): void {

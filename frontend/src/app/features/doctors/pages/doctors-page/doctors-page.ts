@@ -6,9 +6,14 @@ import {
   hasAvailabilityToday,
   hasAvailabilityTomorrow
 } from '../../../../shared/utils/availabilty';
+import { CommonModule } from '@angular/common';
+import { DoctorCardComponent } from '../../components/doctor-card/doctor-card';
+import { Filters } from '../../components/filters/filters';
+
 @Component({
   selector: 'app-doctors-page',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, DoctorCardComponent, Filters],
   templateUrl: './doctors-page.html',
   styleUrl: './doctors-page.css',
 })
@@ -35,6 +40,12 @@ export class DoctorsPage implements OnInit {
       next: (response) => {
         this.doctors = response;
         this.filteredDoctors = response;
+        this.specialities = [
+          ...new Set(this.doctors.map(doctor => doctor.speciality))
+        ];
+        this.locations = [
+          ...new Set(this.doctors.map(doctor => doctor.location))
+        ];
         this.loading = false;
       },
       error: (error) => {
@@ -42,12 +53,6 @@ export class DoctorsPage implements OnInit {
         this.loading = false;
       }
     });
-    this.specialities = [
-      ...new Set(this.doctors.map(doctor => doctor.speciality))
-    ];
-    this.locations = [
-      ...new Set(this.doctors.map(doctor => doctor.location))
-    ];
   }
   applyFilters(filters: DoctorFilters): void {
     this.filteredDoctors = this.doctors.filter(doctor => {
