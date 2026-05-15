@@ -1,0 +1,32 @@
+<!-- <p>checkout works!</p> -->
+
+<div class="container">
+    <div class="left-summary">
+        <h2>Payment Details</h2>
+        <div class="payment-container">
+            <p><b>Consultation Fee:</b> Rs.{{doctor.consultationFee}}</p>
+            <hr>
+            <p><b>GST (18%):</b>Rs.{{gst}}</p>
+            <hr>
+             <p>
+            <b>Platform Fee (5%):</b>Rs.{{platformFee}}</p>
+            <hr>
+            <p>
+            <b>Total Amount:</b>Rs.{{TotalAmount}}</p>
+        </div>
+    </div>
+    <div class="right-summary">
+        <h2>Select Payment Method</h2>
+        <div class="payment-methods">
+            <label>
+                <input type="radio" name="paymentMethod" value="UPI" [(ngModel)]="selectedPaymentMethod">UPI</label>
+            <label>
+                <input type="radio" name="paymentMethod" value="creditCard" [(ngModel)]="selectedPaymentMethod">Credit Card</label>
+            <label>
+                <input type="radio" name="paymentMethod" value="netBanking" [(ngModel)]="selectedPaymentMethod">Net Banking</label>
+            <label>
+                <input type="radio" name="paymentMethod" value="Wallet" [(ngModel)]="selectedPaymentMethod">Wallet</label>
+        </div>
+        <button [disabled]="!selectedPaymentMethod" (click)="proceedToPayment()"> Pay Rs.{{TotalAmount}}</button>
+    </div>
+</div>

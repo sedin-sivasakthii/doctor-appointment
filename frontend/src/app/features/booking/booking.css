@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.left-summary {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-summary {
+  flex: 1.5;
+  min-width: 320px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.doctor-container img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.booking-details {
+  margin-top: 25px;
+}
+
+.booking-details p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.description {
+  color: gray;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+textarea {
+  width: 100%;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  resize: none;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.counter {
+  text-align: right;
+  margin-top: 8px;
+  color: gray;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #1a73e8;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1557b0;
+}
+
+button:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}

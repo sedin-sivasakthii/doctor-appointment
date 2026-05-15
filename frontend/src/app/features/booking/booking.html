@@ -1,0 +1,28 @@
+<!-- <p>booking works!</p> -->
+<div class="container">
+    <div class="left-summary">
+        <h2>Booking Summary</h2>
+        <div class="doctor-container">
+            <img [src]="doctor.image" [alt]="doctor.alt">
+            <div>
+                <h3><b>{{doctor.name}}</b></h3>
+                <p><b>{{doctor.speciality}}</b></p>
+            </div>
+        </div>
+        <div class="booking-details">
+            <p><b>Date:</b> {{slot.date}}</p>
+            <p><b>Time:</b> {{slot.time}}</p>
+            <p><b>Consultation Fee:</b> Rs.{{doctor.consultationFee}}</p>
+        </div>
+    </div>
+    <div class="right-summary">
+        <h2>Describe Your Issue and symptoms</h2>
+        <p class="description">Please provide a detailed description of your medical issue and symptoms to help the doctor understand your condition better</p>
+        <textarea [(ngModel)]="complaint" maxlength="500" placeholder="type sympotms"></textarea>
+        <div class="counter">{{charCount}}/500</div>
+        <p class="error" *ngIf="complaint.length > 0 && complaint.length < 10">
+        Complaint must contain at least 10 characters</p>
+        <button [disabled]="complaint.length < 10" (click)="continueBooking()">Continue</button>
+    </div>
+</div>
+
