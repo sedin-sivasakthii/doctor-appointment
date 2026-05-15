@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { Doctor } from '../../../../core/models/doctor.model';
 
@@ -8,6 +10,8 @@ import {
 
 @Component({
   selector: 'app-doctor-card',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './doctor-card.html',
   styleUrls: ['./doctor-card.css']
 })

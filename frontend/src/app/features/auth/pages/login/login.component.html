@@ -1,9 +1,44 @@
-<h2>login</h2>
-<div *ngIf="error">{{error}}</div>
-<form [formGroup]="form">   
-    <input type="email" formControlName="email" placeholder="Email">
-  <input type="password" formControlName="password" placeholder="Password">
-  <button type="button" (click)="submit()">
-    {{loading?'Logging...':'Login'}}
-  </button>
-</form>
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h2>Welcome Back</h2>
+      <p>Log in to manage your appointments</p>
+    </div>
+
+    <div *ngIf="error" class="error-banner">
+      {{ error }}
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email"
+          formControlName="email" 
+          placeholder="name@example.com"
+          [class.error]="form.get('email')?.invalid && form.get('email')?.touched"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password"
+          formControlName="password" 
+          placeholder="••••••••"
+          [class.error]="form.get('password')?.invalid && form.get('password')?.touched"
+        >
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="form.invalid || loading">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+    </div>
+  </div>
+</div>
