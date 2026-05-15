@@ -1,0 +1,40 @@
+<div class="doctor-container">
+    <div class="back">
+      ← Back to Doctors
+    </div>
+    <div class="doctor-card">
+      <div class="left">
+        <img [src]="doctor.image" class="doctor-img" />
+        <h2>{{ doctor.name }}</h2>
+        <p class="speciality">
+          {{ doctor.speciality }}
+        </p>
+        <p class="location">
+          {{ doctor.location }}
+        </p>
+        <p>
+          {{ doctor.experience }} Years Experience
+        </p>
+        <div class="rating">
+         ⭐ {{ doctor.rating }} ({{ doctor.reviewCount }} reviews)
+        </div>
+        <h3 class="fee">
+          ₹{{ doctor.fee }} Consultation Fee
+        </h3>
+      </div>
+      <div class="right">
+        <h3>About Doctor</h3>
+        <p>
+          {{ doctor.about }}
+        </p>
+        <h3>Reviews</h3>
+        <div *ngFor="let r of reviews" class="review">
+          <b>{{ r.name }}</b> - ⭐ {{ r.rating }}
+          <p>
+            {{ r.comment }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <app-slot-availability></app-slot-availability> -->
