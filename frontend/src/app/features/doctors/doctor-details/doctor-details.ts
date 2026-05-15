@@ -1,29 +1,49 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DoctorsService } from '../../../core/services/doctors.service';
+import { Doctor } from '../../../core/models/doctor.model';
+import { SlotAvailabilityComponent } from '../slot-availabilty/slot-availability.component';
 
 @Component({
+  standalone: true,
   selector: 'app-doctor-details',
-  imports: [CommonModule],
+  imports: [CommonModule, SlotAvailabilityComponent],
   templateUrl: './doctor-details.html',
-  styleUrl: './doctor-details.css',
+  styleUrls: ['./doctor-details.css'],
 })
-export class DoctorDetails {
-  doctor = {
-    name: 'Dr. Priya Raman',
-    speciality: 'Cardiology',
-    location: 'Chennai',
-    experience: 8,
-    rating: 4.6,
-    reviewCount: 128,
-    fee: 800,
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
-    about: `Dr. Priya Raman is a renowned Cardiologist with 8+ years of experience in treating heart-related diseases.
-    She specializes in preventive cardiology and heart health management.`
-  };
- 
-  reviews = [
-    { name: 'Ramesh K', rating: 5, comment: 'Very good experience. Explained everything clearly.' },
-    { name: 'Anita S', rating: 4, comment: 'Doctor is very friendly and helpful.' },
-    { name: 'Vikram P', rating: 5, comment: 'Great experience. Highly recommended.' }
-  ];
+export class DoctorDetails implements OnInit {
+  doctor: Doctor | null = null;
+  reviews: string[] = [];
+  loading = true;
+  error = '';
+
+  constructor(
+    private doctorsService: DoctorsService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      const doctorId = params.get('id') ?? '1';
+      this.loadDoctor(doctorId);
+    });
+  }
+
+  private loadDoctor(id: string): void {
+    this.doctorsService.getDoctorById(id).subscribe({
+      next: (doctor) => {
+        this.doctor = {
+          ...doctor,
+          image: doctor.image || 'https://randomuser.me/api/portraits/lego/2.jpg',
+        };
+        this.reviews = doctor.reviews || [];
+        this.loading = false;
+      },
+      error: () => {
+        this.error = 'Failed to load doctor details from the backend.';
+        this.loading = false;
+      },
+    });
+  }
 }

@@ -8,6 +8,13 @@
     cursor: pointer;
     margin-bottom: 15px;
   }
+
+  .doctor-page {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
    
   .doctor-card {
     display: flex;
@@ -16,6 +23,13 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    flex: 1 1 60%;
+    min-width: 320px;
+  }
+
+  .slot-panel {
+    flex: 0 0 360px;
+    min-width: 320px;
   }
    
   .left {

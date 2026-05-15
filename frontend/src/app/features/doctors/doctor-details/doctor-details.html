@@ -1,40 +1,52 @@
 <div class="doctor-container">
-    <div class="back">
-      ← Back to Doctors
-    </div>
-    <div class="doctor-card">
-      <div class="left">
-        <img [src]="doctor.image" class="doctor-img" />
-        <h2>{{ doctor.name }}</h2>
-        <p class="speciality">
-          {{ doctor.speciality }}
-        </p>
-        <p class="location">
-          {{ doctor.location }}
-        </p>
-        <p>
-          {{ doctor.experience }} Years Experience
-        </p>
-        <div class="rating">
-         ⭐ {{ doctor.rating }} ({{ doctor.reviewCount }} reviews)
-        </div>
-        <h3 class="fee">
-          ₹{{ doctor.fee }} Consultation Fee
-        </h3>
+  <ng-container *ngIf="!loading; else loadingTemplate">
+    <ng-container *ngIf="doctor; else errorTemplate">
+      <div class="back">
+        ← Back to Doctors
       </div>
-      <div class="right">
-        <h3>About Doctor</h3>
-        <p>
-          {{ doctor.about }}
-        </p>
-        <h3>Reviews</h3>
-        <div *ngFor="let r of reviews" class="review">
-          <b>{{ r.name }}</b> - ⭐ {{ r.rating }}
-          <p>
-            {{ r.comment }}
-          </p>
+      <div class="doctor-page">
+        <div class="doctor-card">
+          <div class="left">
+            <img [src]="doctor.image" class="doctor-img" />
+            <h2>{{ doctor.name }}</h2>
+            <p class="speciality">
+              {{ doctor.speciality }}
+            </p>
+            <p class="location">
+              {{ doctor.location }}
+            </p>
+            <p>
+              {{ doctor.experience }} Years Experience
+            </p>
+            <div class="rating">
+              ⭐ {{ doctor.rating || 'N/A' }} ({{ reviews.length }} reviews)
+            </div>
+            <h3 class="fee">
+              ₹{{ doctor.consultationFee }} Consultation Fee
+            </h3>
+          </div>
+          <div class="right">
+            <h3>About Doctor</h3>
+            <p>
+              {{ doctor.about }}
+            </p>
+            <h3>Reviews</h3>
+            <div *ngFor="let review of reviews" class="review">
+              {{ review }}
+            </div>
+          </div>
         </div>
+        <app-slot-availability class="slot-panel" [availability]="doctor.availability"></app-slot-availability>
       </div>
-    </div>
-  </div>
-  <!-- <app-slot-availability></app-slot-availability> -->
+    </ng-container>
+  </ng-container>
+
+  <ng-template #loadingTemplate>
+    <div>Loading doctor details...</div>
+  </ng-template>
+
+  <ng-template #errorTemplate>
+    <div>{{ error || 'Doctor details are not available.' }}</div>
+  </ng-template>
+</div>
+<!-- <app-slot-availability></app-slot-availability> -->

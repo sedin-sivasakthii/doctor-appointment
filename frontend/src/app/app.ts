@@ -1,13 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SlotAvailabilityComponent } from "./features/doctors/slot-availabilty/slot-availability.component";
-import { DoctorDetails } from './features/doctors/doctor-details/doctor-details';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet,DoctorDetails,SlotAvailabilityComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected readonly title = signal('frontend');
