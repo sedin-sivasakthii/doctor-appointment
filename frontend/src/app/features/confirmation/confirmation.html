@@ -1,0 +1,55 @@
+<div class="page" *ngIf="booking">
+    <div class="card">
+        <div class="icon">
+            <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="26" cy="26" r="26" fill="#22C55E"/>
+                <path d="M14 26.5L22 34.5L38 18"
+                    stroke="white" stroke-width="3.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <h1>Booking Confirmed!</h1>
+        <p class="sub">Your appointment has been successfully booked.</p>
+
+        <div class="summary">
+
+            <div class="doctor-row">
+                <div class="avatar">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="14" r="8" fill="#CBD5E1"/>
+                        <path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" fill="#CBD5E1"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="doc-name">{{ booking.doctorName }}</p>
+                    <p class="doc-spec">{{ booking.speciality }}</p>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="detail">
+                    <span class="label">Date</span>
+                    <span class="value">{{ booking.date }}</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Time</span>
+                    <span class="value">{{ booking.time }}</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Booking ID</span>
+                    <span class="value">{{ booking.bookingRef }}</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Amount Paid</span>
+                    <span class="value">&#8377;{{ booking.amountPaid }}</span>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="note">You will receive a confirmation email & SMS shortly</p>
+        <button (click)="goToMyBookings()">Go to My Bookings</button>
+
+    </div>
+</div>
