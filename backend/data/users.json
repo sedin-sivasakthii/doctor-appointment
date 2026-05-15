@@ -16,5 +16,11 @@
     "name": "suman.T",
     "email": "suman@gmail.com",
     "password": "$2b$10$tV0nRZyLX3iJOzoyDuC0auhqn73JEl/fPMN/nwVGdTEcO6WdAvnyC"
+  },
+  {
+    "id": 1778841359383,
+    "name": "swe",
+    "email": "swe@gmail.com",
+    "password": "$2b$10$EjCYbt6WPNXv6Y9JePUryuLESfriYG/kytYjHlMqWd8H5zoAdjs.e"
   }
 ]

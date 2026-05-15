@@ -1,0 +1,27 @@
+ .doctors-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.doctors-page h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 1rem;
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+  color: #4b5563;
+  background: #f9fafb;
+}

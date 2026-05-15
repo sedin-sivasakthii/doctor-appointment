@@ -18,7 +18,7 @@ export class Filters {
     speciality: '',
     location: '',
     availability: '',
-    maxFee: 0
+    maxFee: 2000
   };
   @Input() specialities: string[] = [];
   @Input() locations: string[] = [];
@@ -31,7 +31,7 @@ export class Filters {
       speciality: '',
       location: '',
       availability: '',
-      maxFee: 0
+      maxFee: 2000
     };
     this.filtersChanged.emit(this.filters);
   }

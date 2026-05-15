@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Doctor } from '../../../core/models/doctor.model';
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,8 @@ export class DoctorsService {
   constructor(private http: HttpClient) { }
 
   getDoctors(): Observable<Doctor[]> {
-    return this.http.get<Doctor[]>(this.apiUrl);
+   return this.http.get<{ doctors: Doctor[] }>(this.apiUrl).pipe(
+  map(response => response?.doctors ?? [])
+);
   }
 }

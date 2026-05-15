@@ -15,7 +15,7 @@ import {
   templateUrl: './doctor-card.html',
   styleUrls: ['./doctor-card.css']
 })
-export class DoctorCardComponent {
+export class DoctorCard {
 
   @Input() doctor!: Doctor;
 

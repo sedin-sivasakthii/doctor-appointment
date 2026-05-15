@@ -1,17 +1,13 @@
 <div class="doctors-page">
 
   <h2>
-    All Doctors ({{ filteredDoctors.length }})
+    All Doctors
   </h2>
-
-  <div *ngIf="loading">
-    Loading doctors...
-  </div>
 
  <app-filters
    [specialities]="specialities"
-  [locations]="locations" 
-  (filtersChanged)="applyFilters($event)">
+   [locations]="locations" 
+   (filtersChanged)="onFiltersChanged($event)">
   
 
 </app-filters>
@@ -23,10 +19,7 @@
     [doctor]="doctor">
   </app-doctor-card>
   <div
-  *ngIf="
-    !loading &&
-    filteredDoctors.length === 0
-  "
+  *ngIf="filteredDoctors.length === 0"
   class="empty-state"
 >
 

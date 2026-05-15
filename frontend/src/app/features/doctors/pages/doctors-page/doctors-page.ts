@@ -7,13 +7,13 @@ import {
   hasAvailabilityTomorrow
 } from '../../../../shared/utils/availabilty';
 import { CommonModule } from '@angular/common';
-import { DoctorCardComponent } from '../../components/doctor-card/doctor-card';
+import { DoctorCard } from '../../components/doctor-card/doctor-card';
 import { Filters } from '../../components/filters/filters';
 
 @Component({
   selector: 'app-doctors-page',
   standalone: true,
-  imports: [CommonModule, DoctorCardComponent, Filters],
+  imports: [CommonModule, DoctorCard, Filters],
   templateUrl: './doctors-page.html',
   styleUrl: './doctors-page.css',
 })
@@ -21,11 +21,16 @@ export class DoctorsPage implements OnInit {
   
   doctors: Doctor[] = [];
   specialities: string[] = [];
-
   locations: string[] = [];
 
   filteredDoctors: Doctor[] = [];
-  loading = false;
+  private currentFilters: DoctorFilters = {
+    search: '',
+    speciality: '',
+    location: '',
+    availability: '',
+    maxFee: 2000
+  };
 
   constructor(private doctorsService: DoctorsService) {}
   
@@ -33,29 +38,37 @@ export class DoctorsPage implements OnInit {
     this.fetchDoctors();
   }
   fetchDoctors() :void {
-    this.loading = true;
-
     this.doctorsService.getDoctors()
     .subscribe({
       next: (response) => {
-        this.doctors = response;
-        this.filteredDoctors = response;
-        this.specialities = [
+        this.doctors.splice(0, this.doctors.length, ...response);
+        this.specialities.splice(
+          0,
+          this.specialities.length,
           ...new Set(this.doctors.map(doctor => doctor.speciality))
-        ];
-        this.locations = [
+        );
+        this.locations.splice(
+          0,
+          this.locations.length,
           ...new Set(this.doctors.map(doctor => doctor.location))
-        ];
-        this.loading = false;
+        );
+        this.applyFilters(this.currentFilters);
       },
       error: (error) => {
         console.error('Error fetching doctors:', error);
-        this.loading = false;
       }
     });
   }
-  applyFilters(filters: DoctorFilters): void {
-    this.filteredDoctors = this.doctors.filter(doctor => {
+  onFiltersChanged(filters: DoctorFilters): void {
+    this.currentFilters = {
+      ...filters,
+      maxFee: Number(filters.maxFee) || 0
+    };
+    this.applyFilters(this.currentFilters);
+  }
+
+  private applyFilters(filters: DoctorFilters): void {
+    const filtered = this.doctors.filter(doctor => {
       const matchesSearch =
         doctor.name
           .toLowerCase()
@@ -78,6 +91,7 @@ export class DoctorsPage implements OnInit {
       
 
       const matchesFee =
+        filters.maxFee === 0 ||
         doctor.consultationFee <= filters.maxFee;
       let matchesAvailability = true;
       
@@ -96,6 +110,7 @@ export class DoctorsPage implements OnInit {
 
       );
     });
+    this.filteredDoctors.splice(0, this.filteredDoctors.length, ...filtered);
 }
 }
 

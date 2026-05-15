@@ -1,0 +1,44 @@
+.filters-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  align-items: end;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.filters-container input[type='text'],
+.filters-container select {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+}
+
+.filters-container input[type='range'] {
+  width: 100%;
+}
+
+.filters-container p {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.filters-container button {
+  height: 38px;
+  border: 0;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filters-container button:hover {
+  background: #115e59;
+}

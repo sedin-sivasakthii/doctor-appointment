@@ -1,0 +1,36 @@
+.doctor-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.doctor-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.doctor-card p {
+  margin: 0.25rem 0;
+  color: #374151;
+}
+
+.doctor-card .availability {
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.doctor-card button {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.doctor-card button:hover {
+  background: #1d4ed8;
+}
