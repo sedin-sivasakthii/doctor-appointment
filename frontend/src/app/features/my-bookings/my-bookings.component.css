@@ -1,0 +1,169 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: #202124;
+  margin: 0 0 0.5rem 0;
+}
+
+.page-header p {
+  color: #5f6368;
+  margin: 0;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Empty State Styling */
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background-color: #f1f3f4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-wrapper .material-icons {
+  font-size: 40px;
+  color: #5f6368;
+}
+
+.btn-primary {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.bookings-table th {
+  background-color: #f8f9fa;
+  padding: 16px;
+  font-weight: 600;
+  color: #5f6368;
+  border-bottom: 2px solid #f1f3f4;
+}
+
+.bookings-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f3f4;
+  vertical-align: middle;
+}
+
+.doctor-name { font-weight: 600; color: #202124; }
+.doctor-speciality, .time { font-size: 0.85rem; color: #5f6368; }
+.amount { font-weight: 600; color: #1a73e8; }
+
+.actions { display: flex; gap: 12px; align-items: center; }
+.view-link { color: #1a73e8; text-decoration: none; font-weight: 500; }
+.cancel-btn { background: none; border: none; color: #d93025; cursor: pointer; font-weight: 500; }
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.badge-confirmed { background-color: #e6f4ea; color: #1e8e3e; }
+.badge-cancelled { background-color: #fce8e6; color: #d93025; }
+.badge-pending { background-color: #fef7e0; color: #f9ab00; }
+
+.booking-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f3f4;
+}
+
+.card-header { display: flex; justify-content: space-between; margin-bottom: 16px; }
+.doctor-details h3 { margin: 0; font-size: 1.1rem; }
+.card-body { border-top: 1px solid #f1f3f4; border-bottom: 1px solid #f1f3f4; padding: 12px 0; margin-bottom: 16px; }
+.info-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
+.label { color: #5f6368; }
+.value { font-weight: 500; }
+.card-actions { display: flex; gap: 12px; }
+.btn-secondary, .btn-outline-danger { flex: 1; padding: 10px; border-radius: 6px; text-align: center; text-decoration: none; font-size: 0.9rem; }
+.btn-secondary { background-color: #f1f3f4; color: #3c4043; border: none; }
+.btn-outline-danger { border: 1px solid #d93025; color: #d93025; background: none; }
+
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+  .container { padding: 1rem; }
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+  .page-header { text-align: center; }
+  .page-header h1 { font-size: 1.5rem; }
+}
