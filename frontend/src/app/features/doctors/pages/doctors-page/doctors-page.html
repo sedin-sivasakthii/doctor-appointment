@@ -1,0 +1,45 @@
+<div class="doctors-page">
+
+  <h2>
+    All Doctors ({{ filteredDoctors.length }})
+  </h2>
+
+  <div *ngIf="loading">
+    Loading doctors...
+  </div>
+
+ <app-filters
+   [specialities]="specialities"
+  [locations]="locations" 
+  (filtersChanged)="applyFilters($event)">
+  
+
+</app-filters>
+
+<div class="doctors-grid">
+
+  <app-doctor-card
+    *ngFor="let doctor of filteredDoctors"
+    [doctor]="doctor">
+  </app-doctor-card>
+  <div
+  *ngIf="
+    !loading &&
+    filteredDoctors.length === 0
+  "
+  class="empty-state"
+>
+
+  <h3>
+    No doctors found
+  </h3>
+
+  <p>
+    Try adjusting the filters
+  </p>
+
+</div>
+
+</div>
+
+</div>
