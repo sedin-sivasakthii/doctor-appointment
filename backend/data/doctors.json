@@ -1,0 +1,662 @@
+[
+  {
+    "id": 1,
+    "name": "Dr Ms.Ashwini",
+    "speciality": "Cardiology",
+    "location": "Chennai",
+    "experience": 8,
+    "consultationFee": 800,
+    "reviews": [
+      "Very patient and professional.",
+      "Explained the condition clearly."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dr. Ms Swetha",
+    "speciality": "Dermatology",
+    "location": "Bangalore",
+    "experience": 6,
+    "consultationFee": 600,
+    "reviews": [
+      "Friendly doctor.",
+      "Treatment worked well."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Dr. Kavya Iyer",
+    "speciality": "Neurology",
+    "location": "Hyderabad",
+    "experience": 10,
+    "consultationFee": 1200,
+    "reviews": [
+      "Excellent diagnosis.",
+      "Highly recommended."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Dr. Rohit Sharma",
+    "speciality": "Orthopedics",
+    "location": "Mumbai",
+    "experience": 12,
+    "consultationFee": 1000,
+    "reviews": [
+      "Good treatment plan.",
+      "Very experienced."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Dr. Meera Nair",
+    "speciality": "Pediatrics",
+    "location": "Kochi",
+    "experience": 7,
+    "consultationFee": 700,
+    "reviews": [
+      "Kids feel comfortable.",
+      "Very caring doctor."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Dr. Sanjay Verma",
+    "speciality": "ENT",
+    "location": "Delhi",
+    "experience": 9,
+    "consultationFee": 500,
+    "reviews": [
+      "Very attentive doctor.",
+      "Quick and effective treatment."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Dr. Aditi Kapoor",
+    "speciality": "Gynecology",
+    "location": "Pune",
+    "experience": 11,
+    "consultationFee": 900,
+    "reviews": [
+      "Friendly and supportive.",
+      "Explains everything clearly."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dr. Vikram Rao",
+    "speciality": "Oncology",
+    "location": "Chennai",
+    "experience": 15,
+    "consultationFee": 1500,
+    "reviews": [
+      "Highly knowledgeable specialist.",
+      "Very compassionate care."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Dr. Neha Joshi",
+    "speciality": "Ophthalmology",
+    "location": "Ahmedabad",
+    "experience": 5,
+    "consultationFee": 650,
+    "reviews": [
+      "Very professional service.",
+      "Clinic was well managed."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Dr. Rahul Das",
+    "speciality": "Psychiatry",
+    "location": "Kolkata",
+    "experience": 13,
+    "consultationFee": 1100,
+    "reviews": [
+      "Very understanding doctor.",
+      "Helped manage anxiety well."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Dr. Sneha Pillai",
+    "speciality": "General Medicine",
+    "location": "Trivandrum",
+    "experience": 6,
+    "consultationFee": 550,
+    "reviews": [
+      "Very approachable.",
+      "Good overall consultation."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dr. Kiran Babu",
+    "speciality": "Urology",
+    "location": "Vijayawada",
+    "experience": 10,
+    "consultationFee": 950,
+    "reviews": [
+      "Excellent care provided.",
+      "Very experienced specialist."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Dr. Ananya Singh",
+    "speciality": "Endocrinology",
+    "location": "Jaipur",
+    "experience": 14,
+    "consultationFee": 1250,
+    "reviews": [
+      "Very knowledgeable doctor.",
+      "Explained diabetes management well."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available":true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Dr. Harish Kumar",
+    "speciality": "Gastroenterology",
+    "location": "Coimbatore",
+    "experience": 16,
+    "consultationFee": 1300,
+    "reviews": [
+      "Excellent diagnosis skills.",
+      "Very patient doctor."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Dr. Deepika Reddy",
+    "speciality": "Pulmonology",
+    "location": "Hyderabad",
+    "experience": 8,
+    "consultationFee": 850,
+    "reviews": [
+      "Very caring and attentive.",
+      "Good treatment experience."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  }
+]
