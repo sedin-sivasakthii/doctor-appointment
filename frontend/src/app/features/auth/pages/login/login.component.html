@@ -1,0 +1,9 @@
+<h2>login</h2>
+<div *ngIf="error">{{error}}</div>
+<form [formGroup]="form">   
+    <input type="email" formControlName="email" placeholder="Email">
+  <input type="password" formControlName="password" placeholder="Password">
+  <button type="button" (click)="submit()">
+    {{loading?'Logging...':'Login'}}
+  </button>
+</form>
