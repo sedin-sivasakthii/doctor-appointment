@@ -4,7 +4,7 @@ const{
     login,
     logout,
     getMe,
-    // refreshToken,
+    refreshToken,
 
 }=require("../controllers/authController");
 const verifyToken=require("../middleware/verifyToken");
@@ -13,5 +13,5 @@ router.post("/login",login);
 router.post("/register",register);
 router.post("/logout",logout);
 router.get("/me",verifyToken,getMe);
-// router.post("/refresh",refreshToken);
+router.post("/refresh",refreshToken);
 module.exports=router;

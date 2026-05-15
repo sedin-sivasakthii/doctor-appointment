@@ -15,7 +15,9 @@ app.get("/",(req,res)=>{
     res.send("Doctor Appointment API Running");
 });
 const authRoutes=require("./routes/authRoutes");
+const doctorRoutes = require("./routes/doctorRoutes");
 app.use("/auth",authRoutes);
+app.use("/doctors",doctorRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>{

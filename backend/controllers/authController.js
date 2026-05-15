@@ -148,31 +148,50 @@ const getMe =(req,res)=>
         });
     }
 };
-// const refreshToken=(req,res)=>
-// {
-//     try
-//     {
-//         const authHeader =req.headers.authorization;
-//         if(!authHeader)
-//         {
-//             return res.json({
-//                 message:"No token provided",
-//             });
-//         }
-//         const oldToken=authHeader.split(" ")[1];
-//         const decoded=jwt.verify(
-//             oldToken,
-//             process.env.JWT_SECRET
-//         );
-//         const newToken=jwt.verify(
+const refreshToken=(req,res)=>
+{
+    try
+    {
+        const authHeader =req.headers.authorization;
+        if(!authHeader)
+        {
+            return res.json({
+                message:"No token provided",
+            });
+        }
+        const oldToken=authHeader.split(" ")[1];
+        const decoded=jwt.verify(
+            oldToken,
+            process.env.JWT_SECRET
+        );
+        const newToken=jwt.sign(
+            {
+                id:decoded.id,
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn:"1d",
+            }
 
-//         )
-//     }
-// }
+        );
+        res.json({
+            success:true,
+            token:newToken,
+        });
+
+    }catch(error)
+    {
+        res.status(401).json({
+            success:false,
+            message:"Invalid or expired token",
+        });
+    }
+};
 module.exports =
 {
     register,
     login,
     logout,
     getMe,
+    refreshToken,
 };
