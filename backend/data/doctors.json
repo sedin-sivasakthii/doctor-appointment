@@ -1,0 +1,694 @@
+[
+  {
+    "id": 1,
+    "name": "Dr Ms.Ashwini",
+    "speciality": "Cardiology",
+    "location": "Chennai",
+    "experience": 8,
+    "consultationFee": 800,
+    "rating": 4.7,
+    "about": "Experienced cardiologist specializing in heart health, hypertension, and preventive cardiac care.",
+    "reviews": [
+      "Very patient and professional.",
+      "Explained the condition clearly."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dr. Ms Swetha",
+    "speciality": "Dermatology",
+    "location": "Bangalore",
+    "experience": 6,
+    "consultationFee": 600,
+    "rating": 4.5,
+    "about": "Dermatologist focused on skin allergies, acne treatment, and cosmetic skin procedures.",
+    "reviews": [
+      "Friendly doctor.",
+      "Treatment worked well."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Dr. Kavya Iyer",
+    "speciality": "Neurology",
+    "location": "Hyderabad",
+    "experience": 10,
+    "consultationFee": 1200,
+    "rating": 4.8,
+    "about": "Neurologist with expertise in migraine management, epilepsy, and neurological disorders.",
+    "reviews": [
+      "Excellent diagnosis.",
+      "Highly recommended."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Dr. Rohit Sharma",
+    "speciality": "Orthopedics",
+    "location": "Mumbai",
+    "experience": 12,
+    "consultationFee": 1000,
+    "rating": 4.6,
+    "about": "Orthopedic specialist experienced in joint replacement, fractures, and sports injuries.",
+    "reviews": [
+      "Good treatment plan.",
+      "Very experienced."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Dr. Meera Nair",
+    "speciality": "Pediatrics",
+    "location": "Kochi",
+    "experience": 7,
+    "consultationFee": 700,
+    "rating": 4.9,
+    "about": "Pediatrician dedicated to child wellness, vaccinations, and newborn care.",
+    "reviews": [
+      "Kids feel comfortable.",
+      "Very caring doctor."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Dr. Arjun Menon",
+    "speciality": "Nephrology",
+    "location": "Chennai",
+    "experience": 9,
+    "consultationFee": 950,
+    "rating": 4.7,
+    "about": "Nephrologist specializing in kidney disorders, dialysis care, and hypertension management.",
+    "reviews": [
+      "Very knowledgeable and calm.",
+      "Explained treatment options clearly."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Dr. Priya Raman",
+    "speciality": "Dentistry",
+    "location": "Bangalore",
+    "experience": 5,
+    "consultationFee": 500,
+    "rating": 4.4,
+    "about": "Dental surgeon experienced in cosmetic dentistry, root canal treatment, and oral hygiene care.",
+    "reviews": [
+      "Very gentle during treatment.",
+      "Clinic was neat and hygienic."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dr. Naveen Gupta",
+    "speciality": "Radiology",
+    "location": "Delhi",
+    "experience": 11,
+    "consultationFee": 1150,
+    "rating": 4.8,
+    "about": "Radiologist specializing in MRI, CT scan interpretation, and diagnostic imaging.",
+    "reviews": [
+      "Very accurate diagnosis.",
+      "Professional and efficient."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Dr. Shalini Roy",
+    "speciality": "Physiotherapy",
+    "location": "Kolkata",
+    "experience": 6,
+    "consultationFee": 650,
+    "rating": 4.5,
+    "about": "Physiotherapist helping patients recover from injuries, surgeries, and chronic pain.",
+    "reviews": [
+      "Exercises were very effective.",
+      "Very supportive throughout recovery."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Dr. Vivek Sinha",
+    "speciality": "Cardiology",
+    "location": "Pune",
+    "experience": 14,
+    "consultationFee": 1400,
+    "rating": 4.9,
+    "about": "Senior cardiologist with expertise in angioplasty, heart failure, and preventive cardiology.",
+    "reviews": [
+      "Exceptional care and attention.",
+      "Highly recommended specialist."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  
+  {
+    "id": 11,
+    "name": "Dr. Rakesh Iyer",
+    "speciality": "Dermatology",
+    "location": "Chennai",
+    "experience": 9,
+    "consultationFee": 850,
+    "rating": 4.6,
+    "about": "Dermatologist specializing in acne treatment, skin rejuvenation, and allergy management.",
+    "reviews": [
+      "Very friendly consultation.",
+      "Skin treatment showed quick results."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dr. Lakshmi Prasad",
+    "speciality": "Neurology",
+    "location": "Hyderabad",
+    "experience": 13,
+    "consultationFee": 1350,
+    "rating": 4.8,
+    "about": "Neurologist experienced in stroke care, epilepsy treatment, and neurological rehabilitation.",
+    "reviews": [
+      "Excellent diagnosis and support.",
+      "Very experienced doctor."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Dr. Sonia Mathew",
+    "speciality": "Gynecology",
+    "location": "Kochi",
+    "experience": 8,
+    "consultationFee": 950,
+    "rating": 4.7,
+    "about": "Gynecologist providing pregnancy care, fertility consultation, and women’s wellness services.",
+    "reviews": [
+      "Very caring and understanding.",
+      "Made me feel comfortable during consultation."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": false },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Dr. Amit Kulkarni",
+    "speciality": "ENT",
+    "location": "Mumbai",
+    "experience": 10,
+    "consultationFee": 700,
+    "rating": 4.5,
+    "about": "ENT specialist treating sinusitis, hearing issues, and throat-related disorders.",
+    "reviews": [
+      "Quick diagnosis and treatment.",
+      "Very professional doctor."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": false },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": false },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Dr. Keerthana Rao",
+    "speciality": "Psychiatry",
+    "location": "Bangalore",
+    "experience": 7,
+    "consultationFee": 900,
+    "rating": 4.8,
+    "about": "Psychiatrist helping patients with anxiety, stress management, and emotional wellness.",
+    "reviews": [
+      "Very patient listener.",
+      "Helped improve my mental health significantly."
+    ],
+    "availability": [
+      {
+        "date": "2026-05-15",
+        "slots": [
+          { "time": "09:00", "available": false },
+          { "time": "09:30", "available": true },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": true },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": false },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": true },
+          { "time": "15:00", "available": false },
+          { "time": "15:30", "available": true }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "slots": [
+          { "time": "09:00", "available": true },
+          { "time": "09:30", "available": false },
+          { "time": "10:00", "available": true },
+          { "time": "10:30", "available": false },
+          { "time": "11:00", "available": true },
+          { "time": "11:30", "available": true },
+          { "time": "14:00", "available": true },
+          { "time": "14:30", "available": false },
+          { "time": "15:00", "available": true },
+          { "time": "15:30", "available": true }
+        ]
+      }
+    ]
+  }
+
+]
