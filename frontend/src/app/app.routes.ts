@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 
   {
@@ -20,4 +18,4 @@ export const routes: Routes = [
       import('./features/doctors/doctors.module')
       .then(m => m.DoctorsModule)
   }
-];
+];

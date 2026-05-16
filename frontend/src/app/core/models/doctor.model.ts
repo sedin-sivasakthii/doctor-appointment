@@ -1,6 +1,3 @@
-import { FormsModule  } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-
 export interface Slot {
   time: string;
   available: boolean;
@@ -21,7 +18,3 @@ export interface Doctor {
   reviews: string[];
   availability: AvailabilityDay[];
 }
-
-imports: [
-  FormsModule
-]

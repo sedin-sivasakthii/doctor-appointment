@@ -1,0 +1,50 @@
+<div class="slot-container">
+  <h2>Availability</h2>
+
+  <div class="date">
+    <button
+      *ngFor="let day of availability"
+      [class.active]="day === selectedAvailability"
+      (click)="selectDay(day)">
+      {{ formatDate(day.date) }}
+    </button>
+  </div>
+
+  <h3>{{ selectedDate }}</h3>
+
+  <div class="confirmation-msg" *ngIf="confirmationMessage">
+    {{ confirmationMessage }}
+  </div>
+
+  <div class="slots" *ngIf="slots.length; else noSlots">
+    <button
+      *ngFor="let slot of slots"
+      [ngClass]="{
+        'available': slot.available && slot !== selectedSlot,
+        'booked': !slot.available,
+        'selected': slot === selectedSlot
+      }"
+      [disabled]="!slot.available"
+      (click)="selectSlot(slot)">
+      {{ slot.time }}
+    </button>
+  </div>
+
+  <ng-template #noSlots>
+    <div class="no-slots">No slots available for this day.</div>
+  </ng-template>
+
+  <div class="legend">
+    <span class="available-box"></span> Available
+    <span class="selected-box"></span> Selected
+    <span class="booked-box"></span> Booked
+  </div>
+
+  <button class="book-btn"
+    [disabled]="!selectedSlot"
+    [ngClass]="{'book-btn-active': selectedSlot}"
+    (click)="bookAppointment()">
+    Book Appointment
+  </button>
+</div>
+ 
