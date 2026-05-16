@@ -19,26 +19,39 @@ export class RegisterComponent {
   private router = inject(Router);
 
   error = '';
+  loading = false;
+  success = false;
 
-  form=this.fb.group({
-    name:['',Validators.required],
-    email:['',[Validators.required,Validators.email]],
-    password:['',Validators.required]
+  form = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
   submit() {
-
-    if (this.form.invalid){ 
+    if (this.form.invalid) {
+      this.error = 'Please fill in all fields correctly';
       return;
     }
-    this.auth.register(this.form.value as any)
-      .subscribe({
-        next:()=>{
+
+    this.loading = true;
+    this.error = '';
+    this.success = false;
+
+    this.auth.register(this.form.value as any).subscribe({
+      next: () => {
+        this.loading = false;
+        this.success = true;
+        this.error = '';
+        setTimeout(() => {
           this.router.navigate(['/login']);
-        },
-        error:(err)=>{
-          this.error=err.error?.message || 'Register failed';
-        }
-      });
+        }, 2000);
+      },
+      error: (err) => {
+        this.loading = false;
+        this.error = err.error?.message || 'Registration failed';
+        this.success = false;
+      }
+    });
   }
 }

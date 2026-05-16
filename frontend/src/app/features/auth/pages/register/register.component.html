@@ -1,10 +1,55 @@
-<h2>Register</h2>
-<div *ngIf="error">{{error}}</div>
+<div class="register-container">
+  <h2>Create Account</h2>
+  
+  <div *ngIf="success" class="success-message">
+    ✓ Registration successful! Redirecting to login...
+  </div>
+  
+  <div *ngIf="error" class="error-message">{{ error }}</div>
 
-<form [formGroup]="form">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <input 
+        type="text" 
+        formControlName="name" 
+        placeholder="Full Name"
+        [disabled]="loading"
+      >
+      <small *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="error">
+        Name is required
+      </small>
+    </div>
 
-  <input type="text"formControlName="name" placeholder="Name">
-  <input type="email"formControlName="email" placeholder="Email">
-  <input type="password" formControlName="password" placeholder="Password">
-  <button type="button" (click)="submit()">Register</button>
-</form>
+    <div class="form-group">
+      <input 
+        type="email" 
+        formControlName="email" 
+        placeholder="Email Address"
+        [disabled]="loading"
+      >
+      <small *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="error">
+        Valid email is required
+      </small>
+    </div>
+
+    <div class="form-group">
+      <input 
+        type="password" 
+        formControlName="password" 
+        placeholder="Password (min 6 characters)"
+        [disabled]="loading"
+      >
+      <small *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="error">
+        Password must be at least 6 characters
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="loading || form.invalid">
+      {{ loading ? 'Registering...' : 'Register' }}
+    </button>
+  </form>
+
+  <p class="login-link">
+    Already have an account? <a routerLink="/login">Login here</a>
+  </p>
+</div>
