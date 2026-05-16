@@ -17,7 +17,7 @@ interface DoctorResponse {
 
 @Injectable({ providedIn: 'root' })
 export class DoctorsService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:5000';
   private selectedDoctorId = '1';
 
   constructor(private http: HttpClient) {}
