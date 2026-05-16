@@ -95,5 +95,4 @@ export class DoctorsPage implements OnInit {
     });
   }
 }
-}
 
