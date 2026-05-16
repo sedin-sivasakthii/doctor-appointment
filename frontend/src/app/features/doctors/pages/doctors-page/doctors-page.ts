@@ -1,4 +1,5 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DoctorsService } from '../../services/doctors.service';
 import { Doctor } from '../../../../core/models/doctor.model';
 import { DoctorFilters } from '../../../../core/models/filter.model';
@@ -6,9 +7,13 @@ import {
   hasAvailabilityToday,
   hasAvailabilityTomorrow
 } from '../../../../shared/utils/availabilty';
+import { Filters } from '../../components/filters/filters';
+import { DoctorCardComponent } from '../../components/doctor-card/doctor-card';
+
 @Component({
   selector: 'app-doctors-page',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, Filters, DoctorCardComponent],
   templateUrl: './doctors-page.html',
   styleUrl: './doctors-page.css',
 })

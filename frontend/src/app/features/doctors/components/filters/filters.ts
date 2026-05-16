@@ -1,10 +1,12 @@
-import { Component, EventEmitter,
-  Output ,Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { DoctorFilters } from '.././../../../core/models/filter.model';
 
-import  { DoctorFilters } from '.././../../../core/models/filter.model';
 @Component({
   selector: 'app-filters',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './filters.html',
   styleUrl: './filters.css',
 })
