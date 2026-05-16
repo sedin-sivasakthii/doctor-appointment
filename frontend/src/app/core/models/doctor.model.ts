@@ -17,4 +17,7 @@ export interface Doctor {
   consultationFee: number;
   reviews: string[];
   availability: AvailabilityDay[];
+  image?: string;
+  rating?: number;
+  about?: string;
 }

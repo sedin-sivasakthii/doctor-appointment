@@ -21,9 +21,11 @@ export class Filters {
   };
   @Input() specialities: string[] = [];
   @Input() locations: string[] = [];
-  onFilterChange(): void {
+  
+  onFiltersChange(): void {
     this.filtersChanged.emit(this.filters);
   }
+  
   resetFilters(): void {
     this.filters = {
       search: '',
