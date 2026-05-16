@@ -1,9 +1,29 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
+export interface LastBooking {
+  bookingRef: string;
 
+  doctorName: string;
+  speciality: string;
+  doctorImage: string;
+
+  date: string;
+  time: string;
+
+  complaint: string;
+
+  consultationFee: number;
+  gst: number;
+  platformFee: number;
+  amountPaid: number;
+
+  paymentMethod: string;
+
+  bookedAt: string;
+}
 
 @Component({
   selector: 'app-checkout',
@@ -11,26 +31,43 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './checkout.html',
   styleUrl: './checkout.css',
 })
+
 export class Checkout implements OnInit {
-  doctor: any;
-  slot: any
-  complaint: string = '';
+  booking!: LastBooking;
   selectedPaymentMethod: string = '';
   gst: number = 0;
   platformFee: number = 0;
   TotalAmount: number = 0;
+
+  constructor(
+    private router: Router, 
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
   ngOnInit(): void {
-    const doctorData = localStorage.getItem('doctor');
-    if(doctorData) {
-      this.doctor = JSON.parse(doctorData);
-      const fee = this.doctor.consultationFee;
-      this.gst = fee * 0.18;
-      this.platformFee = fee * 0.05;
-      this.TotalAmount = fee + this.gst + this.platformFee;
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const raw = localStorage.getItem('currentBooking');
+    if(!raw) {
+      this.router.navigate(['/doctors']);
+      return;
     }
+
+    this.booking = JSON.parse(raw);
+
+    const fee = this.booking.consultationFee;
+
+    this.gst = fee * 0.18;
+    this.platformFee = fee * 0.05;
+    this.TotalAmount = fee + this.gst + this.platformFee;
   }
   proceedToPayment(){
-    alert('Payment Successful');
-    localStorage.removeItem('doctor');
+    this.booking.gst = this.gst;
+    this.booking.platformFee = this.platformFee;
+    this.booking.amountPaid = this.TotalAmount;
+    this.booking.paymentMethod = this.selectedPaymentMethod;
+    localStorage.setItem('currentBooking', JSON.stringify(this.booking));
+    localStorage.setItem('lastBooking', JSON.stringify(this.booking));
+    this.router.navigate(['/confirmation']);
   }
 }

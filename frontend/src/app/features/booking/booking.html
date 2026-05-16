@@ -10,6 +10,7 @@
             </div>
         </div>
         <div class="booking-details">
+            <p><b>Booking Ref: </b> {{generatedBookingRef}}</p>
             <p><b>Date:</b> {{slot.date}}</p>
             <p><b>Time:</b> {{slot.time}}</p>
             <p><b>Consultation Fee:</b> Rs.{{doctor.consultationFee}}</p>
@@ -18,7 +19,7 @@
     <div class="right-summary">
         <h2>Describe Your Issue and symptoms</h2>
         <p class="description">Please provide a detailed description of your medical issue and symptoms to help the doctor understand your condition better</p>
-        <textarea [(ngModel)]="complaint" maxlength="500" placeholder="type sympotms"></textarea>
+        <textarea [(ngModel)]="complaint" maxlength="500" placeholder="Type symptoms"></textarea>
         <div class="counter">{{charCount}}/500</div>
         <p class="error" *ngIf="complaint.length > 0 && complaint.length < 10">
         Complaint must contain at least 10 characters</p>

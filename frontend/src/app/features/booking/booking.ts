@@ -1,7 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+
+export interface LastBooking {
+  bookingRef: string;
+
+  doctorName: string;
+  speciality: string;
+  doctorImage: string;
+
+  date: string;
+  time: string;
+
+  complaint: string;
+
+  consultationFee: number;
+  gst: number;
+  platformFee: number;
+  amountPaid: number;
+
+  paymentMethod: string;
+
+  bookedAt: string;
+}
 
 @Component({
   selector: 'app-booking',
@@ -11,7 +33,9 @@ import { Router } from '@angular/router';
   styleUrl: './booking.css',
 })
 
-export class Booking {
+export class Booking implements OnInit{
+  generatedBookingRef: string = '';
+
   doctor = {
     name: 'Dr. Jaya Suirya',
     speciality: 'pediatrician',
@@ -24,19 +48,46 @@ export class Booking {
     time: '10:30 AM'
   };
 
+  ngOnInit(): void {
+    this.generatedBookingRef = this.generateBookingRef();
+  }
+
+  generateBookingRef(): string {
+    return "DOC-" + Date.now();
+  }
+
   complaint:string = '';
   constructor(private router: Router) {}
   get charCount():number {
     return this.complaint.length;
     }
   continueBooking() {
-    if(this.complaint.trim().length<15){
-     return;
-  }
-    localStorage.setItem('complaint', this.complaint);
-    localStorage.setItem('doctor', JSON.stringify(this.doctor));
-    localStorage.setItem('slot', JSON.stringify(this.slot));
-    this.router.navigate(['/booking/confirm']);
+    if(this.complaint.trim().length < 10)
+      return;
+
+    const booking = {
+      bookingRef: this.generatedBookingRef,
+
+      doctorName: this.doctor.name,
+      speciality: this.doctor.speciality,
+      doctorImage: this.doctor.image,
+
+      date: this.slot.date,
+      time: this.slot.time,
+
+      complaint: this.complaint,
+      consultationFee: this.doctor.consultationFee,
+
+      gst: 0,
+      platformFee: 0,
+      amountPaid: 0,
+
+      paymentMethod: '',
+      bookedAt: new Date().toISOString()
+    };
+
+    localStorage.setItem('currentBooking', JSON.stringify(booking));
+    this.router.navigate(['/checkout']);
   }
 }
 
