@@ -63,7 +63,7 @@
  
 .available {
 
-  background: #1e1f1b;
+  background: #89df57;
 
   color: rgb(232, 246, 232);
 
@@ -78,8 +78,6 @@
  background: #bc2e24ce;
   color: white;
   cursor:not-allowed;
-  
-  
 
 
 }

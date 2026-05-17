@@ -42,7 +42,7 @@ export class SlotAvailabilityComponent implements OnChanges {
 
   selectDay(day: AvailabilityDay): void {
     this.selectedAvailability = day;
-    this.selectedDate = this.formatDate(day.date);
+    this.selectedDate =   this.formatDate(day.date);
     this.selectedSlot = null;
     this.confirmationMessage = '';
   }
@@ -52,10 +52,13 @@ export class SlotAvailabilityComponent implements OnChanges {
       return;
     }
     this.selectedSlot = slot;
-    this.confirmationMessage = `Slot ${slot.time} selected. Click Book appointment to confirm.`;
+    this.confirmationMessage = `Slot ${slot.time} selected. Click Book appointment to confirm your slot.`;
   }
+  hasAvailableSlots(): boolean {
+  return this.slots.some(slot => slot.available);
+}
 
-  bookAppointment(): void {
+  bookApointment(): void {
     if (!this.selectedSlot) {
       return;
     }

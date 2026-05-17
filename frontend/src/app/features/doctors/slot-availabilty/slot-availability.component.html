@@ -16,9 +16,11 @@
     {{ confirmationMessage }}
   </div>
 
-  <div class="slots" *ngIf="slots.length; else noSlots">
+  
+  <div class="slots" *ngIf="hasAvailableSlots();
+   else noSlots">
     <button
-      *ngFor="let slot of slots"
+      *ngFor="let slot of slots"   
       [ngClass]="{
         'available': slot.available && slot !== selectedSlot,
         'booked': !slot.available,
@@ -43,7 +45,7 @@
   <button class="book-btn"
     [disabled]="!selectedSlot"
     [ngClass]="{'book-btn-active': selectedSlot}"
-    (click)="bookAppointment()">
+    (click)="bookApointment()">
     Book Appointment
   </button>
 </div>
