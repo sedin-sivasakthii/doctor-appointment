@@ -32,7 +32,7 @@
             <b>Platform Fee (5%):</b>Rs.{{platformFee}}</p>
             <hr>
             <p>
-            <b>Total Amount:</b>Rs.{{TotalAmount}}</p>
+            <b>Total Amount:</b>Rs.{{totalAmount}}</p>
         </div>
     </div>
     <div class="right-summary">
@@ -47,6 +47,6 @@
             <label>
                 <input type="radio" name="paymentMethod" value="Wallet" [(ngModel)]="selectedPaymentMethod">Wallet</label>
         </div>
-        <button [disabled]="!selectedPaymentMethod" (click)="proceedToPayment()"> Pay Rs.{{TotalAmount}}</button>
+        <button [disabled]="!selectedPaymentMethod" (click)="proceedToPayment()"> Pay Rs.{{totalAmount}}</button>
     </div>
 </div>

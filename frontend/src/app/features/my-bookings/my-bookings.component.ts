@@ -1,19 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
-export interface Booking{
-  id:string;
-  userId:string;
-  doctorId:string;
-  bookingRef:string;
-  doctorName:string;
-  speciality:string;
-  date:string;
-  slotTime:string;
-  amount:number;
-  status:'Confirmed'|'Cancelled'|'Pending';
-  complaint?:string;
-}
+import { BookingEntry } from '../../models/bookingEntry';
+
 @Component({
   selector: 'app-my-bookings',
   standalone: true,
@@ -22,10 +11,19 @@ export interface Booking{
   styleUrls: ['./my-bookings.component.css']
 })
 export class MyBookingsComponent implements OnInit{
-  bookings:Booking[]=[];
-  isLoading=true;
+  bookings:BookingEntry[]=[];
+  isLoading:boolean =true;
   private readonly STORAGE_KEY='bookingHistory';
+
+  constructor(
+    @Inject(PLATFORM_ID)
+    private platformId: Object
+  ) {}
+
   ngOnInit():void{
+    if(!isPlatformBrowser(this.platformId))
+      return;
+
     this.loadBookings();
   }
   private loadBookings():void{
@@ -42,6 +40,7 @@ export class MyBookingsComponent implements OnInit{
     }
     this.isLoading=false;
   }
+
   onCancelBooking(id:string):void{
   if (confirm('Are you sure you want to cancel this booking?')){
    this.bookings=this.bookings.map(booking =>{
@@ -54,6 +53,7 @@ export class MyBookingsComponent implements OnInit{
       localStorage.setItem(this.STORAGE_KEY,JSON.stringify(this.bookings));
     }
   }
+
   getStatusClass(status:string):string{
     return `badge-${status.toLowerCase()}`;
   }

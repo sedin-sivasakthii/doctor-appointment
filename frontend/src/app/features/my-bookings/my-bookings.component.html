@@ -39,10 +39,10 @@
               <td>
                 <div class="datetime-info">
                   <span class="date">{{ booking.date | date:'mediumDate' }}</span>
-                  <span class="time">{{ booking.slotTime }}</span>
+                  <span class="time">{{ booking.time }}</span>
                 </div>
               </td>
-              <td><span class="amount">₹{{ booking.amount }}</span></td>
+              <td><span class="amount">₹{{ booking.amountPaid }}</span></td>
               <td>
                 <span class="status-badge" [ngClass]="getStatusClass(booking.status)">
                   {{ booking.status }}
@@ -78,11 +78,11 @@
           <div class="card-body">
             <div class="info-row">
               <span class="label">Date & Time:</span>
-              <span class="value">{{ booking.date | date:'mediumDate' }} at {{ booking.slotTime }}</span>
+              <span class="value">{{ booking.date | date:'mediumDate' }} at {{ booking.time }}</span>
             </div>
             <div class="info-row">
               <span class="label">Amount:</span>
-              <span class="value amount">₹{{ booking.amount }}</span>
+              <span class="value amount">₹{{ booking.amountPaid }}</span>
             </div>
             <div class="info-row">
               <span class="label">Ref ID:</span>

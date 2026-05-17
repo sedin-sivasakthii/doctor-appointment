@@ -2,28 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
-export interface LastBooking {
-  bookingRef: string;
-
-  doctorName: string;
-  speciality: string;
-  doctorImage: string;
-
-  date: string;
-  time: string;
-
-  complaint: string;
-
-  consultationFee: number;
-  gst: number;
-  platformFee: number;
-  amountPaid: number;
-
-  paymentMethod: string;
-
-  bookedAt: string;
-}
+import { BookingEntry } from '../../models/bookingEntry';
 
 @Component({
   selector: 'app-booking',
@@ -35,12 +14,15 @@ export interface LastBooking {
 
 export class Booking implements OnInit{
   generatedBookingRef: string = '';
+  generatedBookingId: string = '';
 
   doctor = {
+    doctorId: 'DOC-001',
     name: 'Dr. Jaya Suirya',
     speciality: 'pediatrician',
     consultationFee: 1000,
-    image: 'https://static.vecteezy.com/system/resources/thumbnails/024/585/326/small/3d-happy-cartoon-doctor-cartoon-doctor-on-transparent-background-generative-ai-png.png',alt: 'Doctor Image'
+    image: 'https://static.vecteezy.com/system/resources/thumbnails/024/585/326/small/3d-happy-cartoon-doctor-cartoon-doctor-on-transparent-background-generative-ai-png.png',
+    alt: 'Doctor Image'
   };
 
   slot = {
@@ -50,24 +32,34 @@ export class Booking implements OnInit{
 
   ngOnInit(): void {
     this.generatedBookingRef = this.generateBookingRef();
+    this.generatedBookingId = this.generateBookingId();
   }
 
   generateBookingRef(): string {
     return "DOC-" + Date.now();
   }
 
+  generateBookingId(): string {
+    return "BOOK-" + Date.now();
+  }
+
   complaint:string = '';
+
   constructor(private router: Router) {}
+
   get charCount():number {
     return this.complaint.length;
-    }
-  continueBooking() {
+  }
+
+  continueBooking(): void {
     if(this.complaint.trim().length < 10)
       return;
 
-    const booking = {
+    const booking: BookingEntry = {
+      id: this.generatedBookingId,
       bookingRef: this.generatedBookingRef,
 
+      doctorId: this.doctor.doctorId,
       doctorName: this.doctor.name,
       speciality: this.doctor.speciality,
       doctorImage: this.doctor.image,
@@ -81,8 +73,9 @@ export class Booking implements OnInit{
       gst: 0,
       platformFee: 0,
       amountPaid: 0,
-
       paymentMethod: '',
+      
+      status: 'Confirmed',
       bookedAt: new Date().toISOString()
     };
 

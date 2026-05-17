@@ -1,17 +1,7 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-
-export interface LastBooking {
-  bookingRef: string;
-  doctorName: string;
-  doctorImage: string;
-  speciality: string;
-  date: string;
-  time: string;
-  amountPaid: number;
-  paymentMethod: string;
-}
+import { BookingEntry } from '../../models/bookingEntry';
 
 @Component({
   selector: 'app-confirmation',
@@ -21,7 +11,7 @@ export interface LastBooking {
 })
 
 export class Confirmation implements OnInit {
-  booking: LastBooking | null = null;
+  booking: BookingEntry | null = null;
 
   constructor(
     private router: Router,
@@ -29,12 +19,13 @@ export class Confirmation implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
+    if (!isPlatformBrowser(this.platformId)) 
+      return;
     
     const raw = localStorage.getItem('lastBooking');
 
     if(!raw) {
-      this.router.navigate([('/doctors')]);
+      this.router.navigate(['/doctors']);
       return;
     }
 
@@ -48,9 +39,10 @@ export class Confirmation implements OnInit {
   }
 
   private appendToHistory(): void {
-    if(!this.booking) return;
+    if(!this.booking) 
+      return;
     const raw = localStorage.getItem('bookingHistory');
-    const history: LastBooking[] = raw ? JSON.parse(raw) : [];
+    const history: BookingEntry[] = raw ? JSON.parse(raw) : [];
 
     const exists = history.some(b => b.bookingRef === this.booking!.bookingRef);
     if(!exists) {
