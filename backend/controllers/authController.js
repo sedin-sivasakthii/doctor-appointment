@@ -15,7 +15,7 @@ const register = async (req,res)=>
             const{name,email,password}=req.body;
             if(!name||!email||!password)
             {
-                return res.json({
+                return res.status(400).json({
                     message :"All fields are required",
                 });
             }
@@ -24,7 +24,7 @@ const register = async (req,res)=>
             );
             if(existingUser)
             {
-                return res.json({
+                return res.status(400).json({
                     message :"User already exists",
                 });
             }
@@ -44,14 +44,14 @@ const register = async (req,res)=>
                 JSON.stringify(users,null,2)
             );
 
-            res.json({
+            res.status(201).json({
                 success:true,
                 message:"Register successful",
             });
         }
         catch(error)
         {
-            res.json({
+            res.status(500).json({
                 message:error.message,
             });
         }
@@ -65,7 +65,7 @@ const login =async (req,res)=>{
             );
         if(!user)
         {
-            return res.json({
+            return res.status(400).json({
                 message :"Invalid email or password",
             });
         }
@@ -75,7 +75,7 @@ const login =async (req,res)=>{
         );
         if(!isMatch)
         {
-            return res.json({
+            return res.status(400).json({
             message:"Invalid email or password",
             });
         }
@@ -103,7 +103,7 @@ const login =async (req,res)=>{
     }
     catch(error)
     {
-            res.json({
+            res.status(500).json({
                 message:error.message,
             });
         
@@ -127,7 +127,7 @@ const getMe =(req,res)=>
         );
         if(!user)
         {
-            return res.json(
+            return res.status(404).json(
                 {
                     message:"User not found",
                 }
@@ -143,7 +143,7 @@ const getMe =(req,res)=>
         });
     }catch(error)
     {
-        res.json({
+        res.status(500).json({
             message:error.message,
         });
     }
@@ -155,7 +155,7 @@ const refreshToken=(req,res)=>
         const authHeader =req.headers.authorization;
         if(!authHeader)
         {
-            return res.json({
+            return res.status(401).json({
                 message:"No token provided",
             });
         }

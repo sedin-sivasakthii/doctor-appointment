@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DoctorsService } from '../../services/doctors.service';
+import { Component, OnInit, PLATFORM_ID, inject, ChangeDetectorRef } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { DoctorsService } from '../../../../core/services/doctors.service';
 import { Doctor } from '../../../../core/models/doctor.model';
 import { DoctorFilters } from '../../../../core/models/filter.model';
 import {
@@ -18,7 +18,7 @@ import { DoctorCardComponent } from '../../components/doctor-card/doctor-card';
   styleUrl: './doctors-page.css',
 })
 export class DoctorsPage implements OnInit {
-  
+
   doctors: Doctor[] = [];
   specialities: string[] = [];
   locations: string[] = [];
@@ -26,10 +26,15 @@ export class DoctorsPage implements OnInit {
   loading = false;
   error = '';
 
-  constructor(private doctorsService: DoctorsService) {}
-  
+  private platformId = inject(PLATFORM_ID);
+  private cdr = inject(ChangeDetectorRef);
+
+  constructor(private doctorsService: DoctorsService) { }
+
   ngOnInit(): void {
-    this.fetchDoctors();
+    if (isPlatformBrowser(this.platformId)) {
+      this.fetchDoctors();
+    }
   }
 
   fetchDoctors(): void {
@@ -42,11 +47,13 @@ export class DoctorsPage implements OnInit {
         this.filteredDoctors = response;
         this.loading = false;
         this.extractFilters();
+        this.cdr.detectChanges();
       },
       error: (error) => {
         console.error('Error fetching doctors:', error);
         this.error = 'Failed to load doctors. Please refresh the page.';
         this.loading = false;
+        this.cdr.detectChanges();
       }
     });
   }
@@ -77,7 +84,7 @@ export class DoctorsPage implements OnInit {
 
       const matchesFee =
         filters.maxFee === 0 || doctor.consultationFee <= filters.maxFee;
-      
+
       let matchesAvailability = true;
       if (filters.availability === 'today') {
         matchesAvailability = hasAvailabilityToday(doctor.availability);
