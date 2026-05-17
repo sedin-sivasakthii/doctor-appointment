@@ -11,18 +11,12 @@
 
   <ng-container *ngIf="!isLoading">
     <div *ngIf="bookings.length === 0" class="empty-state-container">
-      <div class="icon-wrapper">
-        <span class="material-icons">calendar_today</span>
-      </div>
+      
       <h2>No Bookings Found</h2>
       <p>You haven't booked any appointments yet. Start your journey to better health today!</p>
       <button class="btn-primary" routerLink="/doctors">Book an Appointment</button>
     </div>
-
-  
     <div *ngIf="bookings.length > 0" class="bookings-content">
-      
-    
       <div class="desktop-only table-responsive">
         <table class="bookings-table">
           <thead>
@@ -69,7 +63,6 @@
           </tbody>
         </table>
       </div>
-
       <div class="mobile-only">
         <div class="booking-card" *ngFor="let booking of bookings">
           <div class="card-header">
@@ -96,7 +89,6 @@
               <span class="value">{{ booking.bookingRef }}</span>
             </div>
           </div>
-
           <div class="card-actions">
             <a [routerLink]="['/doctor', booking.doctorId]" class="btn-secondary">View Profile</a>
             <button 
@@ -108,7 +100,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </ng-container>
 </div>

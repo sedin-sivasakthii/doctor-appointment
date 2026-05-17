@@ -38,7 +38,7 @@
   margin-bottom: 1rem;
 }
 
-@keyframes spin {
+/* @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
@@ -46,9 +46,9 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
+} */
 
-/* Empty State Styling */
+
 .empty-state-container {
   display: flex;
   flex-direction: column;
