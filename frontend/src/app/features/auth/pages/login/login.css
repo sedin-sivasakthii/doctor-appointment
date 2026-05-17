@@ -1,0 +1,140 @@
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.login-container h3 {
+  color: #34495e;
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form-group input:disabled {
+  background: #e2e8f0;
+  cursor: not-allowed;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #fecaca;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 6px;
+  display: block;
+}
+
+.register-link {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.register-link a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.register-link a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Add a pseudo-element for a nice background on the page */
+:host {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    margin: 20px;
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

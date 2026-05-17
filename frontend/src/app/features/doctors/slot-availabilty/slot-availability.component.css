@@ -1,142 +1,142 @@
+/* Basic Slot Availability Styles */
 .slot-container {
-
-  margin-top: 0px;
-
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
   padding: 20px;
-
-  background: #fff;
-
-  border-radius: 10px;
-
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  font-family: Arial;
-   top: 20px;
-
+  width: 320px;
 }
- 
-.date button {
 
-  margin-right: 10px;
-
-  padding: 8px 12px;
-
-  border: none;
-
-  border-radius: 5px;
-
-  cursor: pointer;
-
+@media (max-width: 960px) {
+  .slot-container {
+    width: 100%;
+  }
 }
- 
-.date .active {
 
-  background: #007bff;
-
-  color: white;
-
+.slot-container h2 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
 }
- 
-.slots {
 
+.date {
   display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-top: 15px;
-
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
- 
-.slots button {
 
-  padding: 8px 12px;
+.date button {
+  padding: 5px 10px;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 12px;
+}
 
-  border-radius: 6px;
+.date button.active {
+  background-color: #0066cc;
+  color: #ffffff;
+  border-color: #0066cc;
+}
 
-  border: none;
+.slot-container h3 {
   font-size: 13px;
-  width: calc(33% - 6px);
-  cursor: pointer;
-
+  margin-bottom: 10px;
 }
- 
+
+.slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.slots button {
+  padding: 8px 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 11px;
+  text-align: center;
+}
+
 .available {
-
-  background: #89df57;
-
-  color: rgb(232, 246, 232);
-
+  background-color: #e6f2ff;
+  color: #0066cc;
 }
-.selected{
-   background: #003580;
-   color: white;
+
+.selected {
+  background-color: #0066cc !important;
+  color: #ffffff !important;
 }
- 
+
 .booked {
-
- background: #bc2e24ce;
-  color: white;
-  cursor:not-allowed;
-
-
-}
-.confirmation-msg {
-  margin-top: 12px;
-  padding: 10px 14px;
-  background: #eaf4ff;
-  border-left: 4px solid #007bff;
-  border-radius: 6px;
-  color: #004080;
-  font-size: 14px;
-}
- 
-.legend {
-
-  margin-top: 15px;
-
-}
- 
-.available-box, .booked-box ,.selected-box{
-
-  display: inline-block;
-
-  width: 12px;
-
-  height: 12px;
-
-  margin-right: 5px;
-
-}
- 
-.available-box {
-
-  background: green;
-
-}
-.selected-box  { background: #003580; }
- 
-.booked-box {
-
-  background: rgba(254, 37, 37, 0.475);
-
-}
- 
-.book-btn {
-
- margin-top: 20px;
- width:100px;
-  padding: 10px 15px;
-  background: #cccccc;
-  color: #666;
-  border: none;
-  border-radius: 6px;
+  background-color: #f0f0f0;
+  color: #999999;
+  text-decoration: line-through;
   cursor: not-allowed;
-
 }
+
+.no-slots {
+  text-align: center;
+  padding: 10px;
+  color: #666666;
+  font-size: 12px;
+  background-color: #fafafa;
+  border: 1px dashed #cccccc;
+  margin-bottom: 15px;
+}
+
+.confirmation-msg {
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  font-size: 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 15px;
+  font-size: 10px;
+  color: #666666;
+}
+
+.legend > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.available-box, .selected-box, .booked-box {
+  width: 8px;
+  height: 8px;
+}
+
+.available-box { background-color: #e6f2ff; border: 1px solid #0066cc; }
+.selected-box { background-color: #0066cc; }
+.booked-box { background-color: #f0f0f0; border: 1px solid #cccccc; }
+
+.book-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #cccccc;
+  color: #666666;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
 .book-btn-active {
-  background: #007bff !important;
-  color: white !important;
+  background-color: #28a745 !important;
+  color: #ffffff !important;
   cursor: pointer !important;
 }
- 

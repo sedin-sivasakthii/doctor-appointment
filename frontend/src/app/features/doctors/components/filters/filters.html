@@ -1,0 +1,91 @@
+<div class="filters-container">
+  <input
+    type="text"
+    placeholder="Search doctor"
+    [(ngModel)]="filters.search"
+    (input)="onFiltersChange()"
+  />
+
+  <select
+    [(ngModel)]="filters.speciality"
+    (change)="onFiltersChange()"
+  >
+
+    <option value="">
+  All Specialities
+</option>
+
+<option
+  *ngFor="
+    let speciality of specialities
+  "
+  [value]="speciality"
+>
+  {{ speciality }}
+</option>
+
+  </select>
+
+  <select
+    [(ngModel)]="filters.location"
+    (change)="onFiltersChange()"
+  >
+
+    <option value="">
+      All Locations
+    </option>
+
+    <option
+      *ngFor="let location of locations"
+      [value]="location"
+    >
+      {{ location }}
+    </option>
+
+    <option value="Bangalore">
+      Bangalore
+    </option>
+
+  </select>
+
+  <select
+    [(ngModel)]="filters.availability"
+    (change)="onFiltersChange()"
+  >
+
+    <option value="">
+      Any Time
+    </option>
+
+    <option value="today">
+      Today
+    </option>
+
+    <option value="tomorrow">
+      Tomorrow
+    </option>
+
+  </select>
+
+  <div>
+
+    <p>
+      Max Fee: ₹{{ filters.maxFee }}
+    </p>
+
+    <input
+      type="range"
+      min="0"
+      max="2000"
+      step="100"
+      [(ngModel)]="filters.maxFee"
+      (input)="onFiltersChange()"
+    />
+
+  </div>
+
+  <button (click)="resetFilters()">
+    Reset
+  </button>
+
+</div>

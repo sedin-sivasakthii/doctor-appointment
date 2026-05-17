@@ -1,4 +1,4 @@
-﻿export interface Slot {
+export interface Slot {
   time: string;
   available: boolean;
 }
@@ -9,15 +9,15 @@ export interface AvailabilityDay {
 }
 
 export interface Doctor {
-  id: string | number;
+  id: number;
   name: string;
   speciality: string;
   location: string;
   experience: number;
   consultationFee: number;
-  rating?: number;
-  about?: string;
-  image?: string;
   reviews: string[];
   availability: AvailabilityDay[];
+  image?: string;
+  rating?: number;
+  about?: string;
 }

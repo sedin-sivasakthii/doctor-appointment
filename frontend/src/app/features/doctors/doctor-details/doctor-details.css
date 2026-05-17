@@ -1,69 +1,123 @@
+/* Basic Doctor Details Styles */
 .doctor-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-   
-  .back {
-    color: #007bff;
-    cursor: pointer;
-    margin-bottom: 15px;
-  }
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
 
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.back:hover {
+  background-color: #eeeeee;
+}
+
+.doctor-page {
+  display: flex;
+  gap: 20px;
+}
+
+.doctor-card {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.left {
+  text-align: center;
+  width: 150px;
+}
+
+.doctor-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+}
+
+.left h2 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: #333333;
+}
+
+.speciality {
+  font-size: 13px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.location {
+  font-size: 12px;
+  color: #666666;
+  margin: 5px 0;
+}
+
+.rating {
+  font-size: 13px;
+  font-weight: bold;
+  color: #f59e0b;
+}
+
+.fee {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 15px;
+}
+
+.fee::before {
+  content: 'Fee: ';
+  font-size: 12px;
+  font-weight: normal;
+  color: #666666;
+}
+
+.right {
+  flex: 1;
+}
+
+.right h3 {
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 5px;
+  font-size: 16px;
+}
+
+.right p {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.review {
+  background-color: #f9f9f9;
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #666666;
+}
+
+@media (max-width: 960px) {
   .doctor-page {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
-   
+  
   .doctor-card {
-    display: flex;
-    gap: 20px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(8, 143, 19, 0.1);
-    flex: 1 1 60%;
-    min-width: 320px;
+    flex-direction: column;
   }
-
-  .slot-panel {
-    flex: 0 0 360px;
-    min-width: 320px;
-  }
-   
-  .left {
-    width: 30%;
-    text-align: center;
-  }
-   
-  .right {
-    width: 70%;
-  }
-   
-  .doctor-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-  }
-   
-  .speciality {
-    color: gray; 
-  }
-   
-  .rating {
-    color: green;
-    margin-top: 10px;
-  }
-   
-  .fee {
-    margin-top: 10px;
-    color: #333;
-  }
-   
-  .review {
-    background: #f8f8f8;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-  }
+}

@@ -1,7 +1,21 @@
 import { Routes } from '@angular/router';
-import { DoctorDetails } from './features/doctors/doctor-details/doctor-details';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'doctors/1', pathMatch: 'full' },
-  { path: 'doctors/:id', component: DoctorDetails },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  {
+    path: '',
+    loadChildren: () =>
+      import('./features/auth/auth-routing.module')
+      .then(m => m.AuthRoutingModule)
+  },
+
+  {
+    path: 'doctors',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./features/doctors/doctors.module')
+      .then(m => m.DoctorsModule)
+  }
 ];

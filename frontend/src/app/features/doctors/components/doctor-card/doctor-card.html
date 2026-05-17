@@ -1,0 +1,13 @@
+<div class="doctor-card">
+  <h3>{{ doctor.name }}</h3>
+  <p class="availability">
+    Next Available: {{ getNextAvailable() }}
+  </p>
+  <p>{{ doctor.speciality }}</p>
+  <p>{{ doctor.location }}</p>
+  <p>{{ doctor.experience }} years experience</p>
+  <p class="fee">₹{{ doctor.consultationFee }}</p>
+  <button [routerLink]="['/doctors', doctor.id]" class="btn-details">
+    View Details
+  </button>
+</div>

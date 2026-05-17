@@ -16,5 +16,29 @@
     "name": "suman.T",
     "email": "suman@gmail.com",
     "password": "$2b$10$tV0nRZyLX3iJOzoyDuC0auhqn73JEl/fPMN/nwVGdTEcO6WdAvnyC"
+  },
+  {
+    "id": 1778952743120,
+    "name": "abi",
+    "email": "abi@gmail.com",
+    "password": "$2b$10$9m0XsyS7gXS4CZIm0N/AuuR/n/dIUGqa8uIvFciHklHPdZSEaKGOW"
+  },
+  {
+    "id": 1778953044915,
+    "name": "Test User",
+    "email": "test@example.com",
+    "password": "$2b$10$PLvpdpwQ5zDdEbFS7YsDZe0KYbxABu/qxuR.X3ihqPNUvMTHAg/SK"
+  },
+  {
+    "id": 1779023227490,
+    "name": "saran",
+    "email": "saran@gmail.com",
+    "password": "$2b$10$k17lgb8cOBs6CFnRZP0rNeVYv3b1g.ulRp6ZUFA5TtUTMParqPJKO"
+  },
+  {
+    "id": 1779025610116,
+    "name": "Saran",
+    "email": "saran@example.com",
+    "password": "$2b$10$BCvu63mqbigJ1xIc4Uk/OOJhNBzowlO/DhEXY5eXc6sNlreTPYWZy"
   }
 ]
