@@ -1,10 +1,10 @@
 const fs = require("fs");
-const bookings = require("../data/bookings.json");
+const bookings = require("../data/booking.json");
 const doctors = require("../data/doctors.json");
 
 
 const saveBookings = () => {
-    fs.writeFileSync("./data/bookings.json", JSON.stringify(bookings, null, 2));
+    fs.writeFileSync("./data/booking.json", JSON.stringify(bookings, null, 2));
 };
 
 const saveDoctors = () => {

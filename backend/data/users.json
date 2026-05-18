@@ -40,5 +40,23 @@
     "name": "Saran",
     "email": "saran@example.com",
     "password": "$2b$10$BCvu63mqbigJ1xIc4Uk/OOJhNBzowlO/DhEXY5eXc6sNlreTPYWZy"
+  },
+  {
+    "id": 1779031005018,
+    "name": "sakthi",
+    "email": "sakthi@gmail.com",
+    "password": "$2b$10$FZGlms4hoctjWV7j1HoKPueR66ER4JG2h4VvdYpII875nPkmUbqhK"
+  },
+  {
+    "id": 1779077424199,
+    "name": "pavi",
+    "email": "pavi@gmail.com",
+    "password": "$2b$10$P/wbN7aOE/rw075gG7J1EuUO39TKhyHkMTTcbgTBVP8/I0gkq90uG"
+  },
+  {
+    "id": 1779077536890,
+    "name": "suri",
+    "email": "suri@gmail.com",
+    "password": "$2b$10$LS2zvxqInsaP1PrXDCk/9OZC1zOmO9WI9dtAwMeDsj8p8XEGnb9NO"
   }
 ]

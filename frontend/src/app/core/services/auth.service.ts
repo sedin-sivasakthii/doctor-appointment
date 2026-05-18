@@ -61,13 +61,22 @@ export class AuthService {
   getUser(): User | null {
     if (isPlatformBrowser(this.platformId)) {
       const user = localStorage.getItem('currentUser');
-      return user ? JSON.parse(user) : null;
+      if (user && user !== 'undefined') {
+        try {
+          return JSON.parse(user);
+        } catch (e) {
+          console.error('Error parsing user from localStorage:', e);
+          localStorage.removeItem('currentUser');
+          localStorage.removeItem('authToken');
+          return null;
+        }
+      }
     }
 
     return null;
   }
 
   isLoggedIn(): boolean {
-    return !!this.getToken();
+    return !!this.getToken() && !!this.getUser();
   }
 }
