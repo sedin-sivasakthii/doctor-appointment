@@ -1,12 +1,31 @@
-const doctors =require("../data/doctors.json");
-const getDoctors =(req,res)=>
+const doctors = require("../data/doctors.json");
+
+function normalizeAvailabilityDates(availability) {
+    return availability.map((day, index) => {
+        const normalizedDate = new Date();
+        normalizedDate.setDate(normalizedDate.getDate() + index);
+        return {
+            ...day,
+            date: normalizedDate.toISOString().split('T')[0],
+        };
+    });
+}
+
+function normalizeDoctors(doctorsList) {
+    return doctorsList.map((doctor) => ({
+        ...doctor,
+        availability: normalizeAvailabilityDates(doctor.availability),
+    }));
+}
+const getDoctors = (req, res) =>
 {
     try
     {
+        const normalizedDoctors = normalizeDoctors(doctors);
         res.json({
             success:true,
-            totalDoctors:doctors.length,
-            doctors,
+            totalDoctors:normalizedDoctors.length,
+            doctors:normalizedDoctors,
         });
     }catch(error)
     {
@@ -21,7 +40,8 @@ const getDoctorById = (req,res)=>
     try
     {
         const doctorId=parseInt(req.params.id);
-        const doctor=doctors.find(
+        const normalizedDoctors = normalizeDoctors(doctors);
+        const doctor=normalizedDoctors.find(
             (doc)=>doc.id===doctorId
         );
         if(!doctor)
