@@ -17,7 +17,7 @@ export class Booking implements OnInit{
   generatedBookingId: string = '';
 
   doctor = {
-    doctorId: 'DOC-001',
+    doctorId: '1',
     name: 'Dr. Jaya Suirya',
     speciality: 'pediatrician',
     consultationFee: 1000,
@@ -26,7 +26,7 @@ export class Booking implements OnInit{
   };
 
   slot = {
-    date: '14 May 2026',
+    date: '2026-05-14',
     time: '10:30 AM'
   };
 

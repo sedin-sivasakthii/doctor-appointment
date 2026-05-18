@@ -71,7 +71,7 @@ export class SlotAvailabilityComponent implements OnChanges {
       speciality: this.doctor.speciality,
       doctorImage: this.doctor.image,
       consultationFee: this.doctor.consultationFee,
-      date: this.selectedDate,
+      date: this.selectedAvailability?.date || this.selectedDate,
       time: this.selectedSlot.time
     };
     

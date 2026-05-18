@@ -42,6 +42,7 @@ export class DoctorDetails implements OnInit {
           ...doctor,
           image: doctor.image || 'https://randomuser.me/api/portraits/lego/2.jpg',
         };
+        this.applyLocalStorageBookings();
         this.reviews = doctor.reviews || [];
         this.loading = false;
         this.cdr.detectChanges();
@@ -52,5 +53,31 @@ export class DoctorDetails implements OnInit {
         this.cdr.detectChanges();
       },
     });
+  }
+
+  private applyLocalStorageBookings(): void {
+    if (!this.doctor) return;
+
+    const raw = localStorage.getItem('bookedSlots');
+    if (raw) {
+      try {
+        const bookedSlots: Array<{ doctorId: number; date: string; slotTime: string }> = JSON.parse(raw);
+        this.doctor.availability.forEach((day) => {
+          day.slots.forEach((slot) => {
+            const isBooked = bookedSlots.some(
+              (bs) =>
+                bs.doctorId === this.doctor!.id &&
+                bs.date === day.date &&
+                bs.slotTime === slot.time
+            );
+            if (isBooked) {
+              slot.available = false;
+            }
+          });
+        });
+      } catch (e) {
+        console.error('Error parsing booked slots', e);
+      }
+    }
   }
 }

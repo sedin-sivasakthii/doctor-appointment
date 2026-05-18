@@ -11,7 +11,7 @@
         </div>
         <div class="booking-details">
             <p><b>Booking Ref: </b> {{generatedBookingRef}}</p>
-            <p><b>Date:</b> {{slot.date}}</p>
+            <p><b>Date:</b> {{slot.date | date:'mediumDate'}}</p>
             <p><b>Time:</b> {{slot.time}}</p>
             <p><b>Consultation Fee:</b> Rs.{{doctor.consultationFee}}</p>
         </div>

@@ -10,51 +10,70 @@ import { BookingEntry } from '../../models/bookingEntry';
   templateUrl: './my-bookings.component.html',
   styleUrls: ['./my-bookings.component.css']
 })
-export class MyBookingsComponent implements OnInit{
-  bookings:BookingEntry[]=[];
-  isLoading:boolean =true;
-  private readonly STORAGE_KEY='bookingHistory';
+export class MyBookingsComponent implements OnInit {
+  bookings: BookingEntry[] = [];
+  isLoading: boolean = true;
+  private readonly STORAGE_KEY = 'bookingHistory';
 
   constructor(
     @Inject(PLATFORM_ID)
     private platformId: Object
   ) {}
 
-  ngOnInit():void{
-    if(!isPlatformBrowser(this.platformId))
+  ngOnInit(): void {
+    if (!isPlatformBrowser(this.platformId))
       return;
 
     this.loadBookings();
   }
-  private loadBookings():void{
-  this.isLoading=true;
-  const data=localStorage.getItem(this.STORAGE_KEY);
-  if(data){
-    try{
-        this.bookings=JSON.parse(data);
-    }
-    catch(e){
-    console.error('Error parsing booking history', e);
-      this.bookings=[];
-    }
-    }
-    this.isLoading=false;
-  }
 
-  onCancelBooking(id:string):void{
-  if (confirm('Are you sure you want to cancel this booking?')){
-   this.bookings=this.bookings.map(booking =>{
-    if(booking.id === id && booking.status==='Confirmed')
-      {
-      return {...booking, status: 'Cancelled' as const};
+  private loadBookings(): void {
+    this.isLoading = true;
+    const data = localStorage.getItem(this.STORAGE_KEY);
+    if (data) {
+      try {
+        this.bookings = JSON.parse(data);
+      } catch (e) {
+        console.error('Error parsing booking history', e);
+        this.bookings = [];
       }
-      return booking;
+    }
+    this.isLoading = false;
+  }
+
+  onCancelBooking(id: string): void {
+    if (confirm('Are you sure you want to cancel this booking?')) {
+      const bookingToCancel = this.bookings.find(b => b.id === id);
+      if (bookingToCancel) {
+        // Remove from bookedSlots in localStorage
+        const rawBooked = localStorage.getItem('bookedSlots');
+        if (rawBooked) {
+          try {
+            let bookedSlots = JSON.parse(rawBooked);
+            bookedSlots = bookedSlots.filter((bs: any) => !(
+              bs.doctorId === Number(bookingToCancel.doctorId) &&
+              bs.date === bookingToCancel.date &&
+              bs.slotTime === bookingToCancel.time
+            ));
+            localStorage.setItem('bookedSlots', JSON.stringify(bookedSlots));
+          } catch (e) {
+            console.error('Error updating booked slots', e);
+          }
+        }
+      }
+
+      // Update the status in bookings array and save to bookingHistory
+      this.bookings = this.bookings.map(booking => {
+        if (booking.id === id && booking.status === 'Confirmed') {
+          return { ...booking, status: 'Cancelled' as const };
+        }
+        return booking;
       });
-      localStorage.setItem(this.STORAGE_KEY,JSON.stringify(this.bookings));
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.bookings));
     }
   }
 
-  getStatusClass(status:string):string{
+  getStatusClass(status: string): string {
     return `badge-${status.toLowerCase()}`;
   }
 }

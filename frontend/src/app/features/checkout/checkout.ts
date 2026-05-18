@@ -41,13 +41,26 @@ export class Checkout implements OnInit {
     this.platformFee = fee * 0.05;
     this.totalAmount = fee + this.gst + this.platformFee;
   }
+
   proceedToPayment(): void {
     this.booking.gst = this.gst;
     this.booking.platformFee = this.platformFee;
     this.booking.amountPaid = this.totalAmount;
     this.booking.paymentMethod = this.selectedPaymentMethod;
+
     localStorage.setItem('currentBooking', JSON.stringify(this.booking));
     localStorage.setItem('lastBooking', JSON.stringify(this.booking));
+
+    // Save to bookedSlots in localStorage
+    const rawBooked = localStorage.getItem('bookedSlots');
+    const bookedSlots = rawBooked ? JSON.parse(rawBooked) : [];
+    bookedSlots.push({
+      doctorId: Number(this.booking.doctorId),
+      date: this.booking.date,
+      slotTime: this.booking.time
+    });
+    localStorage.setItem('bookedSlots', JSON.stringify(bookedSlots));
+
     this.router.navigate(['/confirmation']);
   }
 }
