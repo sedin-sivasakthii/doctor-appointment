@@ -1,0 +1,105 @@
+<div class="container">
+  <header class="page-header">
+    <h1>My Bookings</h1>
+    <p>Manage and track your medical appointments</p>
+  </header>
+
+  <div *ngIf="isLoading" class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading your bookings...</p>
+  </div>
+
+  <ng-container *ngIf="!isLoading">
+    <div *ngIf="bookings.length === 0" class="empty-state-container">
+      
+      <h2>No Bookings Found</h2>
+      <p>You haven't booked any appointments yet. Start your journey to better health today!</p>
+      <button class="btn-primary" routerLink="/doctors">Book an Appointment</button>
+    </div>
+    <div *ngIf="bookings.length > 0" class="bookings-content">
+      <div class="desktop-only table-responsive">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>Doctor</th>
+              <th>Date & Time</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of bookings">
+              <td>
+                <div class="doctor-info">
+                  <span class="doctor-name">{{ booking.doctorName }}</span>
+                  <span class="doctor-speciality">{{ booking.speciality }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="datetime-info">
+                  <span class="date">{{ booking.date | date:'mediumDate' }}</span>
+                  <span class="time">{{ booking.time }}</span>
+                </div>
+              </td>
+              <td><span class="amount">₹{{ booking.amountPaid }}</span></td>
+              <td>
+                <span class="status-badge" [ngClass]="getStatusClass(booking.status)">
+                  {{ booking.status }}
+                </span>
+              </td>
+              <td>
+                <div class="actions">
+                  <a [routerLink]="['/doctor', booking.doctorId]" class="view-link">View Doctor</a>
+                  <button 
+                    *ngIf="booking.status === 'Confirmed'" 
+                    (click)="onCancelBooking(booking.id)" 
+                    class="cancel-btn">
+                    Cancel
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mobile-only">
+        <div class="booking-card" *ngFor="let booking of bookings">
+          <div class="card-header">
+            <div class="doctor-details">
+              <h3>{{ booking.doctorName }}</h3>
+              <p>{{ booking.speciality }}</p>
+            </div>
+            <span class="status-badge" [ngClass]="getStatusClass(booking.status)">
+              {{ booking.status }}
+            </span>
+          </div>
+          
+          <div class="card-body">
+            <div class="info-row">
+              <span class="label">Date & Time:</span>
+              <span class="value">{{ booking.date | date:'mediumDate' }} at {{ booking.time }}</span>
+            </div>
+            <div class="info-row">
+              <span class="label">Amount:</span>
+              <span class="value amount">₹{{ booking.amountPaid }}</span>
+            </div>
+            <div class="info-row">
+              <span class="label">Ref ID:</span>
+              <span class="value">{{ booking.bookingRef }}</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a [routerLink]="['/doctor', booking.doctorId]" class="btn-secondary">View Profile</a>
+            <button 
+              *ngIf="booking.status === 'Confirmed'" 
+              (click)="onCancelBooking(booking.id)" 
+              class="btn-outline-danger">
+              Cancel Booking
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

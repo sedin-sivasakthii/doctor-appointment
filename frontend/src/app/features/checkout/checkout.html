@@ -1,0 +1,52 @@
+<!-- <p>checkout works!</p> -->
+
+<div class="container" *ngIf="booking">
+    <div class="left-summary">
+        <h2>Appointment Summary</h2>
+        <div class="doctor-summary">
+            <img [src]="booking.doctorImage" alt="Doctor Image" class="doctor-image">
+            <div>
+                <h3>{{booking.doctorName}}</h3>
+                <p>{{booking.speciality}}</p>
+            </div>
+        </div>
+
+        <div class="slot-summary">
+            <p><b>Booking Ref: </b>{{booking.bookingRef}}</p>
+            <p><b>Date: </b>{{booking.date}}</p>
+            <p><b>Time: </b>{{booking.time}}</p>
+        </div>
+
+        <div class="complaint-preview">
+            <p><b>Symptoms: </b></p>
+            <p class="complaint-text">{{booking.complaint}}</p>
+        </div>
+        <div class="payment-container">
+        <h2>Payment Details</h2>
+        
+            <p><b>Consultation Fee:</b> Rs.{{booking.consultationFee}}</p>
+            <hr>
+            <p><b>GST (18%):</b>Rs.{{gst}}</p>
+            <hr>
+             <p>
+            <b>Platform Fee (5%):</b>Rs.{{platformFee}}</p>
+            <hr>
+            <p>
+            <b>Total Amount:</b>Rs.{{totalAmount}}</p>
+        </div>
+    </div>
+    <div class="right-summary">
+        <h2>Select Payment Method</h2>
+        <div class="payment-methods">
+            <label>
+                <input type="radio" name="paymentMethod" value="UPI" [(ngModel)]="selectedPaymentMethod">UPI</label>
+            <label>
+                <input type="radio" name="paymentMethod" value="creditCard" [(ngModel)]="selectedPaymentMethod">Credit Card</label>
+            <label>
+                <input type="radio" name="paymentMethod" value="netBanking" [(ngModel)]="selectedPaymentMethod">Net Banking</label>
+            <label>
+                <input type="radio" name="paymentMethod" value="Wallet" [(ngModel)]="selectedPaymentMethod">Wallet</label>
+        </div>
+        <button [disabled]="!selectedPaymentMethod" (click)="proceedToPayment()"> Pay Rs.{{totalAmount}}</button>
+    </div>
+</div>
