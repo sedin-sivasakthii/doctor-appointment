@@ -5,6 +5,7 @@ import { BookingEntry } from '../../models/bookingEntry';
 
 @Component({
   selector: 'app-confirmation',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './confirmation.html',
   styleUrl: './confirmation.css',

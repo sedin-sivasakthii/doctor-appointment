@@ -33,6 +33,24 @@ export class Booking implements OnInit{
   ngOnInit(): void {
     this.generatedBookingRef = this.generateBookingRef();
     this.generatedBookingId = this.generateBookingId();
+    
+    // Retrieve booking data from localStorage
+    const bookingData = localStorage.getItem('selectedBookingData');
+    if (bookingData) {
+      const data = JSON.parse(bookingData);
+      this.doctor = {
+        doctorId: data.doctorId,
+        name: data.doctorName,
+        speciality: data.speciality,
+        consultationFee: data.consultationFee,
+        image: data.doctorImage,
+        alt: 'Doctor Image'
+      };
+      this.slot = {
+        date: data.date,
+        time: data.time
+      };
+    }
   }
 
   generateBookingRef(): string {

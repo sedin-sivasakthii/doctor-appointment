@@ -6,6 +6,7 @@ import { BookingEntry } from '../../models/bookingEntry';
 
 @Component({
   selector: 'app-checkout',
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './checkout.html',
   styleUrl: './checkout.css',

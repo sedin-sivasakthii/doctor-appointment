@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { AvailabilityDay, Slot } from '../../../core/models/doctor.model';
+import { Router } from '@angular/router';
+import { AvailabilityDay, Slot, Doctor } from '../../../core/models/doctor.model';
  
 @Component({
   selector: 'app-slot-availability',
@@ -12,6 +13,7 @@ import { AvailabilityDay, Slot } from '../../../core/models/doctor.model';
 
 export class SlotAvailabilityComponent implements OnChanges {
   @Input() availability: AvailabilityDay[] = [];
+  @Input() doctor: Doctor | null = null;
 
   selectedDate = '';
   selectedAvailability: AvailabilityDay | null = null;
@@ -55,13 +57,28 @@ export class SlotAvailabilityComponent implements OnChanges {
     this.confirmationMessage = `Slot ${slot.time} selected. Click Book appointment to confirm.`;
   }
 
+  constructor(private router: Router) {}
+
   bookAppointment(): void {
-    if (!this.selectedSlot) {
+    if (!this.selectedSlot || !this.doctor) {
       return;
     }
-    this.selectedSlot.available = false;
-    this.confirmationMessage = `Appointment Booked for ${this.selectedSlot.time}`;
-    this.selectedSlot = null;
+    
+    // Store booking data in localStorage
+    const bookingData = {
+      doctorId: this.doctor.id,
+      doctorName: this.doctor.name,
+      speciality: this.doctor.speciality,
+      doctorImage: this.doctor.image,
+      consultationFee: this.doctor.consultationFee,
+      date: this.selectedDate,
+      time: this.selectedSlot.time
+    };
+    
+    localStorage.setItem('selectedBookingData', JSON.stringify(bookingData));
+    
+    // Navigate to booking page
+    this.router.navigate(['/booking']);
   }
 
   formatDate(value: string): string {
