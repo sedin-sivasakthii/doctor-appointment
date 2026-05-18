@@ -58,5 +58,11 @@
     "name": "suri",
     "email": "suri@gmail.com",
     "password": "$2b$10$LS2zvxqInsaP1PrXDCk/9OZC1zOmO9WI9dtAwMeDsj8p8XEGnb9NO"
+  },
+  {
+    "id": 1779095672321,
+    "name": "Test User",
+    "email": "testuser@test.com",
+    "password": "$2b$10$1r8Hs7JqUK5tWT3Pb7XhXuy.2hNH2Ibf2VcebKEKu4kNh9KNGXHLm"
   }
 ]
