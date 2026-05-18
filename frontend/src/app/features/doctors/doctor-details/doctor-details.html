@@ -2,7 +2,7 @@
   <ng-container *ngIf="!loading; else loadingTemplate">
     <ng-container *ngIf="doctor; else errorTemplate">
       <div class="back" [routerLink]="['/doctors']" style="cursor: pointer;">
-        ← Back to Doctors
+        Back to Doctors
       </div>
       <div class="doctor-page">
         <div class="doctor-card">
@@ -49,4 +49,3 @@
     <div>{{ error || 'Doctor details are not available.' }}</div>
   </ng-template>
 </div>
-<!-- <app-slot-availability></app-slot-availability> -->

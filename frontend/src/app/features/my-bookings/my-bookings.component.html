@@ -50,7 +50,7 @@
               </td>
               <td>
                 <div class="actions">
-                  <a [routerLink]="['/doctor', booking.doctorId]" class="view-link">View Doctor</a>
+                  <a [routerLink]="['/doctors', booking.doctorId]" class="view-link">View Doctor</a>
                   <button 
                     *ngIf="booking.status === 'Confirmed'" 
                     (click)="onCancelBooking(booking.id)" 
@@ -90,7 +90,7 @@
             </div>
           </div>
           <div class="card-actions">
-            <a [routerLink]="['/doctor', booking.doctorId]" class="btn-secondary">View Profile</a>
+            <a [routerLink]="['/doctors', booking.doctorId]" class="btn-secondary">View Profile</a>
             <button 
               *ngIf="booking.status === 'Confirmed'" 
               (click)="onCancelBooking(booking.id)" 
