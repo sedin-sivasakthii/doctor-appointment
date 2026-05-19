@@ -7,15 +7,34 @@ const register = async (req,res)=>
 {
       try
         {
-            const{name,email,password}=req.body;
-            if(!name||!email||!password)
+            let {name,email,password}=req.body;
+            const trimmedName = name?.toString().trim();
+            const trimmedEmail = email?.toString().trim();
+            const passwordValue = password?.toString();
+
+            if(!trimmedName || !trimmedEmail || !passwordValue || !passwordValue.trim())
             {
                 return res.status(400).json({
                     message :"All fields are required",
                 });
             }
+
+            if(!/^[A-Za-z]/.test(trimmedName))
+            {
+                return res.status(400).json({
+                    message: "Name must start with a letter",
+                });
+            }
+
+            if(passwordValue.trim().length < 6)
+            {
+                return res.status(400).json({
+                    message: "Password must be at least 6 characters",
+                });
+            }
+
             const existingUser =users.find(
-                (user)=>user.email===email
+                (user)=>user.email===trimmedEmail
             );
             if(existingUser)
             {
@@ -24,12 +43,12 @@ const register = async (req,res)=>
                 });
             }
             const hashedpass =await bcrypt.hash(
-                password,10
+                passwordValue,10
             );
             const newuser ={
                 id:Date.now(),
-                name,
-                email,
+                name: trimmedName,
+                email: trimmedEmail,
                 password :hashedpass,
             };
             users.push(newuser);

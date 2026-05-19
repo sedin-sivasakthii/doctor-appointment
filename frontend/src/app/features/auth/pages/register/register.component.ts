@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../../core/services/auth.service';
 
@@ -23,10 +23,15 @@ export class RegisterComponent {
   success = false;
 
   form = this.fb.group({
-    name: ['', Validators.required],
+    name: ['', [Validators.required, this.noWhitespaceValidator, Validators.pattern(/^[A-Za-z][\s\S]*$/)]],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
+    password: ['', [Validators.required, Validators.minLength(6), this.noWhitespaceValidator]]
   });
+
+  noWhitespaceValidator(control: FormControl) {
+    const isWhitespace = (control.value || '').toString().trim().length === 0;
+    return isWhitespace ? { whitespace: true } : null;
+  }
 
   submit() {
     if (this.form.invalid) {
