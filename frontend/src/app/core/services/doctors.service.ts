@@ -18,6 +18,7 @@ interface DoctorResponse {
 @Injectable({ providedIn: 'root' })
 export class DoctorsService {
   private baseUrl = 'https://doctor-appointment-f9cc.onrender.com';
+  
   private selectedDoctorId = '1';
 
   constructor(private http: HttpClient) {}
