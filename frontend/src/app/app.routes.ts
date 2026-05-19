@@ -6,7 +6,7 @@ import { Confirmation } from './features/confirmation/confirmation';
 import { MyBookingsComponent } from './features/my-bookings/my-bookings.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'doctors', pathMatch: 'full' },
 
   {
     path: '',
@@ -17,7 +17,6 @@ export const routes: Routes = [
 
   {
     path: 'doctors',
-    canActivate: [authGuard],
     loadChildren: () =>
       import('./features/doctors/doctors.module')
       .then(m => m.DoctorsModule)
@@ -49,6 +48,6 @@ export const routes: Routes = [
 
   {
     path: '**',
-    redirectTo: 'login'
+    redirectTo: 'doctors'
   }
 ];
