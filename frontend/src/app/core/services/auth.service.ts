@@ -5,12 +5,13 @@ import { isPlatformBrowser } from '@angular/common';
 
 import { LoginResponse, RegisterResponse, User } from '../models/auth.model';
 import { Observable, tap } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'https://doctor-appointment-f9cc.onrender.com/auth';
+  private baseUrl = environment.apiAuthUrl;
 
   constructor(
     private http: HttpClient,

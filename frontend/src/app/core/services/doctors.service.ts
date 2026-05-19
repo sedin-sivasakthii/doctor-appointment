@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, map } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Doctor } from '../models/doctor.model';
+import { environment } from '../../../environments/environment';
 
 interface DoctorsResponse {
   success: boolean;
@@ -17,8 +18,8 @@ interface DoctorResponse {
 
 @Injectable({ providedIn: 'root' })
 export class DoctorsService {
-  private baseUrl = 'https://doctor-appointment-f9cc.onrender.com';
-  
+  private baseUrl = environment.apiUrl;
+
   private selectedDoctorId = '1';
 
   constructor(private http: HttpClient) {}
