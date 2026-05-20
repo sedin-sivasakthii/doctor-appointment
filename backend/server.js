@@ -7,8 +7,9 @@ const doctorRoutes = require("./routes/doctorRoutes");
 
 const app = express();
 
+const corsOrigin = process.env.CORS_ORIGIN || "http://localhost:4200";
 app.use(cors({
-    origin: "http://localhost:4200",
+    origin: corsOrigin,
     credentials: true,
 }));
 

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
+import { environment } from '../../../environments/environment';
 import { LoginResponse, RegisterResponse, User } from '../models/auth.model';
 import { Observable, tap } from 'rxjs';
 
@@ -10,7 +11,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:5000/auth';
+  private baseUrl = `${environment.apiUrl}/auth`;
 
   constructor(
     private http: HttpClient,

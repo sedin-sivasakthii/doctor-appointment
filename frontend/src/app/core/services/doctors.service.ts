@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, map } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 import { Doctor } from '../models/doctor.model';
 
 interface DoctorsResponse {
@@ -17,7 +18,7 @@ interface DoctorResponse {
 
 @Injectable({ providedIn: 'root' })
 export class DoctorsService {
-  private baseUrl = 'http://localhost:5000';
+  private baseUrl = environment.apiUrl;
   private selectedDoctorId = '1';
 
   constructor(private http: HttpClient) {}
