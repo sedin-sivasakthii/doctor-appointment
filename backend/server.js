@@ -7,9 +7,19 @@ const doctorRoutes = require("./routes/doctorRoutes");
 
 const app = express();
 
-const corsOrigin = process.env.CORS_ORIGIN || "http://localhost:4200";
+const corsOrigins = (process.env.CORS_ORIGIN || "http://localhost:4200")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
 app.use(cors({
-    origin: corsOrigin,
+    origin: function (origin, callback) {
+        if (!origin || corsOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error(`CORS origin denied: ${origin}`));
+        }
+    },
     credentials: true,
 }));
 
