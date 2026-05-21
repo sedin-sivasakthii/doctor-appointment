@@ -1,10 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const apiUrl =
-  process.env.API_URL ||
-  process.env.BACKEND_API_URL ||
-  'http://localhost:5000';
+const apiUrl = 'https://doctor-appointment-f9cc.onrender.com';
 
 const targetPath = path.join(__dirname, '..', 'src', 'environments', 'environment.prod.ts');
 
